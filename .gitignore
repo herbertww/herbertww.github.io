@@ -1,0 +1,5 @@
+# Original full-size drops — the optimised web copies live in assets/img/
+assets/*.png
+assets/*.jpeg
+assets/*.jpg
+!assets/img/*.jpg

@@ -30,6 +30,7 @@
     <a href="#projects">Projects</a>
     <a href="#law">Law</a>
     <a href="#record">Record</a>
+    <a href="#gallery">Photos</a>
     <a href="#contact">Contact</a>
   </nav>
   <button id="theme" type="button" aria-label="Toggle colour theme">
@@ -66,10 +67,12 @@
         </p>
       </div>
 
-      <aside class="hero-side reveal" aria-hidden="true">
-        <div class="halftone">
-          <span class="stamp">DEGENERALIST</span>
-        </div>
+      <aside class="hero-side reveal">
+        <figure class="halftone">
+          <img src="assets/img/portrait-tukang.jpg" width="933" height="1400"
+               alt="Herbert Eng in front of the tukang.app wall" fetchpriority="high" decoding="async" />
+          <span class="stamp" aria-hidden="true">DEGENERALIST</span>
+        </figure>
         <ul class="stats">
           <li><b>03</b><span>live builds</span></li>
           <li><b>S$600K</b><span>A*STAR-backed</span></li>
@@ -77,6 +80,7 @@
           <li><b>1ST</b><span>class honours, NTU</span></li>
         </ul>
       </aside>
+
 
     </div>
   </section>
@@ -369,6 +373,65 @@
         <p>Whitepapers · long-form argument · video · community</p>
       </div>
     </div>
+  </section>
+
+  <!-- ─────────────────────────── GALLERY ─────────────────────────── -->
+  <section id="gallery">
+    <h2 class="section-title reveal">In person</h2>
+    <p class="section-note reveal">Swipe, drag, or use the arrows.</p>
+
+    <div class="gallery reveal">
+      <button class="g-nav g-prev" type="button" aria-label="Previous image">←</button>
+
+      <ul class="g-track" id="g-track" tabindex="0" role="group" aria-label="Photo gallery — scroll horizontally">
+        <li>
+          <figure>
+            <img src="assets/img/portrait-cafe.jpg" width="1050" height="1400"
+                 alt="Portrait, outdoors under string lights" decoding="async" />
+            <figcaption>Close up</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="assets/img/seated-golden.jpg" width="933" height="1400"
+                 alt="Seated at an outdoor table in late afternoon light" decoding="async" />
+            <figcaption>Table outside, late light</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="assets/img/seated-sunset.jpg" width="1050" height="1400"
+                 alt="Seated with an iced coffee at sunset" decoding="async" />
+            <figcaption>Iced coffee, sun going down</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="assets/img/gaming-defeat.jpg" width="932" height="1400"
+                 alt="At a gaming PC, pointing at a screen reading DEFEAT, final score 1–2" decoding="async" />
+            <figcaption>Overwatch. Final score 1–2.</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="assets/img/platform-close.jpg" width="1051" height="1400"
+                 alt="Selfie on an MRT platform" decoding="async" />
+            <figcaption>MRT platform</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="assets/img/platform-wide.jpg" width="720" height="900"
+                 alt="Wider selfie on the same MRT platform" decoding="async" />
+            <figcaption>Same platform, wider</figcaption>
+          </figure>
+        </li>
+      </ul>
+
+      <button class="g-nav g-next" type="button" aria-label="Next image">→</button>
+    </div>
+
+    <p class="g-status reveal"><span id="g-count">1 / 6</span></p>
   </section>
 
   <!-- ─────────────────────────── CONTACT ─────────────────────────── -->
