@@ -25,6 +25,20 @@
     });
   }
 
+  // ── hero video: hold on the poster frame if motion is unwelcome ──
+  (function heroVideo() {
+    var v = document.getElementById('hero-video');
+    if (!v || !window.matchMedia) return;
+    var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    function apply() {
+      if (mq.matches) { v.pause(); v.removeAttribute('autoplay'); }
+      else if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    }
+    apply();
+    if (mq.addEventListener) mq.addEventListener('change', apply);
+    else if (mq.addListener) mq.addListener(apply);
+  })();
+
   // ── gallery: snap scrolling, arrows, drag, keyboard ──
   (function gallery() {
     var track = document.getElementById('g-track');
