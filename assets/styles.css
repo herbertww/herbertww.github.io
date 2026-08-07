@@ -397,6 +397,42 @@ main { counter-reset: sec; }
   text-decoration-skip-ink: none;
 }
 
+/* Phone-shaped demo capture. Sits beside the copy on wide screens and drops
+   under it on narrow ones, so the gif never squeezes the prose. */
+.project-demo {
+  margin: 1.75rem 0 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: start;
+}
+.project-demo figure {
+  margin: 0;
+  border: var(--bw) solid var(--line);
+  box-shadow: 6px 6px 0 var(--shadow);
+  background: var(--card);
+  line-height: 0;
+}
+.project-demo img {
+  display: block;
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+}
+.project-demo figcaption {
+  line-height: 1.4;
+  padding: 0.5rem 0.65rem;
+  border-top: 2px solid var(--line);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+@media (max-width: 46rem) {
+  .project-demo { grid-template-columns: minmax(0, 1fr); }
+  .project-demo img { width: 100%; max-width: 300px; }
+}
+
 .facts {
   list-style: none; margin: 1.75rem 0; padding: 0;
   border: var(--bw) solid var(--line);
