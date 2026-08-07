@@ -397,29 +397,41 @@ main { counter-reset: sec; }
   text-decoration-skip-ink: none;
 }
 
-/* Phone-shaped demo capture. Sits beside the copy on wide screens and drops
-   under it on narrow ones, so the gif never squeezes the prose. */
-.project-demo {
-  margin: 1.75rem 0 0;
+/* Phone-shaped demo capture. A 380x844 screen is far taller than any caption,
+   so the prose moves up beside it and the two columns end at roughly the same
+   depth instead of leaving a column of dead paper. */
+.project-split {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: clamp(1.25rem, 3vw, 2rem);
   align-items: start;
 }
-.project-demo figure {
+.split-copy { columns: 1; }             /* the phone is the second column */
+
+.demo-line {
+  font-weight: 700;
+  color: var(--ink) !important;
+  border-left: 6px solid var(--magenta);
+  padding-left: 0.85rem;
+  margin-bottom: 0 !important;
+}
+
+.demo-phone {
   margin: 0;
   border: var(--bw) solid var(--line);
   box-shadow: 6px 6px 0 var(--shadow);
   background: var(--card);
   line-height: 0;
 }
-.project-demo img {
+.demo-phone video,
+.demo-phone img {
   display: block;
-  width: 240px;
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  aspect-ratio: 380 / 844;
+  object-fit: cover;
 }
-.project-demo figcaption {
+.demo-phone figcaption {
   line-height: 1.4;
   padding: 0.5rem 0.65rem;
   border-top: 2px solid var(--line);
@@ -428,9 +440,10 @@ main { counter-reset: sec; }
   text-transform: uppercase;
   color: var(--ink-faint);
 }
+
 @media (max-width: 46rem) {
-  .project-demo { grid-template-columns: minmax(0, 1fr); }
-  .project-demo img { width: 100%; max-width: 300px; }
+  .project-split { grid-template-columns: minmax(0, 1fr); }
+  .demo-phone { max-width: 300px; margin-inline: auto; }
 }
 
 .facts {

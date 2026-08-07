@@ -3,3 +3,6 @@ assets/*.png
 assets/*.jpeg
 assets/*.jpg
 !assets/img/*.jpg
+
+# Superseded by assets/video/runturfing-demo.mp4 (kept locally as the source)
+assets/img/*.gif

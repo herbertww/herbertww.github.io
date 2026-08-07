@@ -25,14 +25,17 @@
     });
   }
 
-  // ── hero video: hold on the poster frame if motion is unwelcome ──
-  (function heroVideo() {
-    var v = document.getElementById('hero-video');
-    if (!v || !window.matchMedia) return;
+  // ── videos: hold on the poster frame if motion is unwelcome ──
+  (function videos() {
+    var vids = document.querySelectorAll('video');
+    if (!vids.length || !window.matchMedia) return;
     var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
     function apply() {
-      if (mq.matches) { v.pause(); v.removeAttribute('autoplay'); }
-      else if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      for (var i = 0; i < vids.length; i++) {
+        var v = vids[i];
+        if (mq.matches) { v.pause(); v.removeAttribute('autoplay'); }
+        else if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      }
     }
     apply();
     if (mq.addEventListener) mq.addEventListener('change', apply);

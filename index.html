@@ -190,38 +190,44 @@
         <p class="role">Founder · in development</p>
       </header>
       <p class="tagline">Run the same streets often enough and the map becomes yours.</p>
-      <div class="project-body">
-        <p>
-          Runturfing is an iPhone-first social running app for people who will never join a gym. The
-          mechanic is territory: it pulls your routes from HealthKit, scores them onto a hexagonal
-          grid, and turns repeated runs through the same corridors and neighbourhoods into visible
-          map control. Your ground decays while you leave it undefended, so you gain more from
-          running Tuesday and Thursday than from one heroic Sunday.
-        </p>
-        <p>
-          You compete in a group of six against other groups: two-week seasons, a season pool that pays
-          out to members who clear the activity threshold, group chat that pings you when somebody
-          takes your ground, and a perpetual leaderboard underneath. The app fuzzes your location near
-          home and gates by age, since a map of your runs doubles as a map of your address.
-        </p>
-      </div>
-      <div class="project-demo">
-        <p class="tagline" style="margin: 0;">
-          You score territory onto the grid as you run, and lose it again when you stop defending it.
-        </p>
-        <figure>
-          <img src="assets/img/runturfing-demo.gif" width="380" height="844" loading="lazy"
-               decoding="async"
-               alt="Screen recording of the Runturfing iPhone app: running routes filling a hexagonal
-                    map grid with claimed territory.">
+      <div class="project-split">
+        <div class="project-body split-copy">
+          <p>
+            Runturfing is an iPhone-first social running app for people who will never join a gym. The
+            mechanic is territory: it pulls your routes from HealthKit, scores them onto a hexagonal
+            grid, and turns repeated runs through the same corridors and neighbourhoods into visible
+            map control. Your ground decays while you leave it undefended, so you gain more from
+            running Tuesday and Thursday than from one heroic Sunday.
+          </p>
+          <p>
+            You compete in a group of six against other groups: two-week seasons, a season pool that
+            pays out to members who clear the activity threshold, group chat that pings you when
+            somebody takes your ground, and a perpetual leaderboard underneath. The app fuzzes your
+            location near home and gates by age, since a map of your runs doubles as a map of your
+            address.
+          </p>
+          <p class="demo-line">
+            You score territory onto the grid as you run, and lose it again when you stop defending it.
+          </p>
+
+          <ul class="facts">
+            <li><span>App</span><b>SwiftUI · MapKit · HealthKit, iOS 16+</b></li>
+            <li><span>Backend</span><b>FastAPI · PostgreSQL + PostGIS · H3 spatial grid</b></li>
+            <li><span>Status</span><b>Private repository, TestFlight builds; walkthrough on request</b></li>
+          </ul>
+        </div>
+
+        <figure class="demo-phone">
+          <video id="demo-video" autoplay muted loop playsinline
+                 poster="assets/img/runturfing-poster.jpg"
+                 aria-label="Screen recording of the Runturfing iPhone app: running routes filling a hexagonal map grid with claimed territory, then the leaderboard and profile screens">
+            <source src="assets/video/runturfing-demo.mp4" type="video/mp4" />
+            <img src="assets/img/runturfing-poster.jpg" width="380" height="844"
+                 alt="The Runturfing map screen, hexagonal cells claimed across a neighbourhood" />
+          </video>
           <figcaption>Runturfing · TestFlight build</figcaption>
         </figure>
       </div>
-      <ul class="facts">
-        <li><span>App</span><b>SwiftUI · MapKit · HealthKit, iOS 16+</b></li>
-        <li><span>Backend</span><b>FastAPI · PostgreSQL + PostGIS · H3 spatial grid</b></li>
-        <li><span>Status</span><b>Private repository, TestFlight builds; walkthrough on request</b></li>
-      </ul>
       <p class="links">
         <a class="btn ghost" href="mailto:herbert.ww@gmail.com?subject=Runturfing">Ask for a walkthrough</a>
       </p>
