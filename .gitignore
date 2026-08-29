@@ -6,3 +6,8 @@ assets/*.jpg
 
 # Superseded by assets/video/runturfing-demo.mp4 (kept locally as the source)
 assets/img/*.gif
+
+# deploy
+node_modules/
+deploy/public/
+demo-*.png

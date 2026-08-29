@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "greenlane-pitch",
+  "compatibility_date": "2026-08-01",
+  // Static-assets-only Worker: no server code, Cloudflare serves public/ from the edge.
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "single-page-application"
+  }
+}
