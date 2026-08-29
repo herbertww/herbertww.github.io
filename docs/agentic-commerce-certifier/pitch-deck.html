@@ -38,166 +38,195 @@
 }
 
 *{box-sizing:border-box}
-body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4{font-family:var(--display);font-weight:700;letter-spacing:-.02em;text-wrap:balance;margin:0}
 p{margin:0}
 a{color:var(--accent-ink)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
 
-.wrap{max-width:1150px;margin:0 auto;padding:0 28px}
-section.slide{border-top:1px solid var(--line);padding:62px 0 68px}
-.slide-inner{display:grid;grid-template-columns:118px minmax(0,1fr);gap:34px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+section.slide{border-top:1px solid var(--line);padding:54px 0 58px}
+.slide-inner{display:grid;grid-template-columns:112px minmax(0,1fr);gap:32px}
 .rail{align-self:start;position:sticky;top:20px}
-.num{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--accent);color:var(--surface-2);font-family:var(--display);font-weight:700;font-size:18px;margin-bottom:11px}
+.num{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--surface-2);font-family:var(--display);font-weight:700;font-size:17px;margin-bottom:10px}
 .rail b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);font-weight:600}
 .rail span{display:block;margin-top:5px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 @media(max-width:820px){.slide-inner{grid-template-columns:1fr;gap:16px}.rail{position:static;display:flex;align-items:center;gap:12px}.num{margin-bottom:0}}
 
-.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:12px}
-h2.head{font-size:clamp(26px,3.1vw,38px);line-height:1.08;margin-bottom:14px}
-h3.sub{font-family:var(--display);font-size:14px;font-weight:600;letter-spacing:.01em;margin:0 0 10px;color:var(--ink)}
-.lede{font-size:19px;line-height:1.5;color:var(--ink-2);max-width:66ch}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:11px}
+h2.head{font-size:clamp(25px,2.9vw,35px);line-height:1.08;margin-bottom:12px}
+h3.sub{font-family:var(--display);font-size:13.5px;font-weight:600;margin:0 0 9px;color:var(--ink)}
+.lede{font-size:18px;line-height:1.5;color:var(--ink-2);max-width:68ch}
 .lede strong{color:var(--ink);font-weight:500}
-.note{font-family:var(--display);font-size:13px;line-height:1.55;color:var(--muted)}
-.stack{display:flex;flex-direction:column;gap:20px}
-.stack-lg{display:flex;flex-direction:column;gap:30px}
+.note{font-family:var(--display);font-size:12.5px;line-height:1.5;color:var(--muted)}
+.stack{display:flex;flex-direction:column;gap:18px}
+.stack-lg{display:flex;flex-direction:column;gap:26px}
 
-/* hero */
-.hero{padding:56px 0 60px}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(310px,.88fr);gap:46px;align-items:center}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:34px}}
-.wordmark{display:flex;align-items:center;gap:11px;font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:24px}
+.hero{padding:50px 0 54px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(300px,.88fr);gap:42px;align-items:center}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:32px}}
+.wordmark{display:flex;align-items:center;gap:11px;font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
 .wordmark .dot{width:9px;height:9px;border-radius:50%;background:var(--jade);box-shadow:0 0 0 4px var(--jade-soft)}
-h1.title{font-size:clamp(36px,5.2vw,62px);line-height:.98;font-weight:800;letter-spacing:-.035em;margin-bottom:18px}
+h1.title{font-size:clamp(34px,4.9vw,58px);line-height:.98;font-weight:800;letter-spacing:-.035em;margin-bottom:16px}
 h1.title em{font-style:normal;color:var(--accent-ink)}
-.meta{margin-top:24px;display:flex;flex-wrap:wrap;gap:9px}
-.tag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:6px 11px;border:1px solid var(--line);border-radius:2px;color:var(--muted);background:var(--surface)}
+.meta{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--line);border-radius:2px;color:var(--muted);background:var(--surface)}
 
-/* pass card */
 .pass{background:var(--surface-2);border:1px solid var(--line);border-radius:4px;box-shadow:var(--shadow);overflow:hidden}
-.pass-top{padding:18px 20px 14px;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;align-items:flex-start;gap:16px;background:linear-gradient(180deg,var(--accent-soft),transparent)}
-.pass-top .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.pass-top .v{font-family:var(--display);font-weight:700;font-size:16px;margin-top:3px}
-.tier{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.16em;padding:6px 10px;border-radius:2px;background:var(--accent);color:#fff;white-space:nowrap}
+.pass-top{padding:16px 18px 13px;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;align-items:flex-start;gap:14px;background:linear-gradient(180deg,var(--accent-soft),transparent)}
+.pass-top .k{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.pass-top .v{font-family:var(--display);font-weight:700;font-size:15.5px;margin-top:3px}
+.tier{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.16em;padding:6px 10px;border-radius:2px;background:var(--accent);color:#fff;white-space:nowrap}
 :root[data-theme="dark"] .tier{color:#16211E}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .tier{color:#16211E}}
-.pass-score{display:flex;align-items:baseline;gap:12px;padding:16px 20px 4px}
-.pass-score b{font-family:var(--display);font-size:50px;font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
-.pass-score span{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.1em}
-.bars{padding:10px 20px 16px;display:flex;flex-direction:column;gap:8px}
-.bar{display:grid;grid-template-columns:126px 1fr 38px;align-items:center;gap:10px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.tier.bad{background:var(--rust);color:#fff}
+.pass-score{display:flex;align-items:baseline;gap:11px;padding:14px 18px 4px}
+.pass-score b{font-family:var(--display);font-size:46px;font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.pass-score span{font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.1em}
+.bars{padding:9px 18px 14px;display:flex;flex-direction:column;gap:7px}
+.bar{display:grid;grid-template-columns:118px 1fr 34px;align-items:center;gap:9px;font-family:var(--mono);font-size:10px;color:var(--muted)}
 .bar .t{height:6px;border-radius:3px;background:var(--line-soft);overflow:hidden}
-.bar .t i{display:block;height:100%;background:var(--accent);border-radius:3px}
+.bar .t i{display:block;height:100%;background:var(--accent);border-radius:3px;transition:width .5s ease}
+.bar .t i.bad{background:var(--rust)}
 .bar .n{text-align:right;color:var(--ink-2);font-variant-numeric:tabular-nums}
-.pass-foot{border-top:1px dashed var(--line);padding:12px 20px 16px;display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
-.pass-foot b{display:block;color:var(--ink-2);font-weight:500;font-size:11px;margin-top:2px;word-break:break-all}
+.pass-foot{border-top:1px dashed var(--line);padding:11px 18px 15px;display:grid;grid-template-columns:1fr 1fr;gap:9px 14px;font-family:var(--mono);font-size:10px;color:var(--muted)}
+.pass-foot b{display:block;color:var(--ink-2);font-weight:500;font-size:10.5px;margin-top:2px;word-break:break-all}
 .live{display:flex;align-items:center;gap:7px;grid-column:1/-1;padding-top:4px;border-top:1px solid var(--line-soft);color:var(--jade)}
 .live i{width:7px;height:7px;border-radius:50%;background:var(--jade);flex:none}
 
-/* primitives */
-.cards{display:grid;gap:14px}
+.cards{display:grid;gap:13px}
 .c2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .c3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .c4{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media(max-width:900px){.c3,.c4{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.cards{grid-template-columns:1fr!important}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:17px}
-.card .kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.card p{font-size:15px;line-height:1.5;color:var(--ink-2)}
-.card h4{font-size:15.5px;margin-bottom:6px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:16px}
+.card .kicker{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.card p{font-size:14.5px;line-height:1.48;color:var(--ink-2)}
+.card h4{font-size:15px;margin-bottom:6px}
 
-.stat{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:17px}
-.stat b{display:block;font-family:var(--display);font-size:33px;font-weight:800;letter-spacing:-.035em;line-height:1;font-variant-numeric:tabular-nums}
-.stat span{display:block;font-family:var(--display);font-size:13px;line-height:1.42;color:var(--muted);margin-top:8px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:16px}
+.stat b{display:block;font-family:var(--display);font-size:31px;font-weight:800;letter-spacing:-.035em;line-height:1;font-variant-numeric:tabular-nums}
+.stat span{display:block;font-family:var(--display);font-size:12.5px;line-height:1.4;color:var(--muted);margin-top:7px}
 .stat.hot b{color:var(--rust)}
 .stat.good b{color:var(--jade)}
 
 table{width:100%;border-collapse:collapse;font-family:var(--display);font-size:13.5px}
 .tbl{overflow-x:auto;border:1px solid var(--line);border-radius:3px;background:var(--surface)}
-th{text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:500;padding:10px 13px;border-bottom:1px solid var(--line);white-space:nowrap}
-td{padding:9px 13px;border-bottom:1px solid var(--line-soft);color:var(--ink-2);vertical-align:top}
+th{text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:500;padding:9px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:8px 12px;border-bottom:1px solid var(--line-soft);color:var(--ink-2);vertical-align:top}
 tbody tr:last-child td{border-bottom:0}
-td.num-c,th.num-c{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:12.5px}
-td.id{font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap}
+td.num-c,th.num-c{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:12px}
+td.id{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap}
 td strong{color:var(--ink);font-weight:600}
-code{font-family:var(--mono);font-size:12.5px;color:var(--accent-ink)}
+code{font-family:var(--mono);font-size:12px;color:var(--accent-ink)}
 
-.chip{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.08em;padding:3px 7px;border-radius:2px;white-space:nowrap}
+.chip{display:inline-block;font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.08em;padding:3px 7px;border-radius:2px;white-space:nowrap}
 .chip.y{background:var(--jade-soft);color:var(--jade)}
 .chip.n{background:var(--rust-soft);color:var(--rust)}
 .chip.a{background:var(--accent-soft);color:var(--accent-ink)}
 
-.quote{border-left:2px solid var(--accent);padding:2px 0 2px 20px;font-size:18.5px;line-height:1.45;color:var(--ink)}
-.quote cite{display:block;font-family:var(--display);font-size:12.5px;font-style:normal;color:var(--muted);margin-top:9px}
+.quote{border-left:2px solid var(--accent);padding:2px 0 2px 18px;font-size:17.5px;line-height:1.42;color:var(--ink)}
+.quote cite{display:block;font-family:var(--display);font-size:12px;font-style:normal;color:var(--muted);margin-top:8px}
 
-/* compact rails strip */
-.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:3px;background:var(--surface);overflow:hidden}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:3px;background:var(--surface);overflow:hidden}
 @media(max-width:760px){.strip{grid-template-columns:1fr}}
-.strip div{padding:12px 14px;border-right:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.strip div{padding:11px 13px;border-right:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
 .strip div:nth-child(3n){border-right:0}
 .strip div:nth-last-child(-n+3){border-bottom:0}
 @media(max-width:760px){.strip div{border-right:0}.strip div:last-child{border-bottom:0}}
-.strip .d{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--accent-ink)}
-.strip .w{font-family:var(--display);font-size:14px;font-weight:600;margin-top:3px;color:var(--ink)}
-.strip .x{font-family:var(--display);font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.4}
+.strip .d{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--accent-ink)}
+.strip .w{font-family:var(--display);font-size:13.5px;font-weight:600;margin-top:3px;color:var(--ink)}
+.strip .x{font-family:var(--display);font-size:12px;color:var(--muted);margin-top:2px;line-height:1.38}
 
-/* numbered list */
-.qlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 22px}
+.qlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 20px}
 @media(max-width:700px){.qlist{grid-template-columns:1fr}}
-.q{display:grid;grid-template-columns:26px 1fr;gap:11px;align-items:start}
-.q i{font-family:var(--mono);font-size:11px;font-style:normal;color:var(--accent-ink);padding-top:3px}
-.q p{font-family:var(--display);font-size:14.5px;line-height:1.45;color:var(--ink-2)}
+.q{display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start}
+.q i{font-family:var(--mono);font-size:10.5px;font-style:normal;color:var(--accent-ink);padding-top:3px}
+.q p{font-family:var(--display);font-size:14px;line-height:1.42;color:var(--ink-2)}
 .q p b{color:var(--ink);font-weight:600}
 
-/* architecture compact */
-.arch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+/* ---------- DEMO ---------- */
+.demo{border:1px solid var(--accent);border-radius:4px;background:var(--surface-2);overflow:hidden;box-shadow:var(--shadow)}
+.demo-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 16px;border-bottom:1px solid var(--line);background:var(--accent-soft)}
+.demo-head .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:600}
+.urlbar{flex:1;min-width:190px;display:flex;align-items:center;gap:8px;background:var(--surface-2);border:1px solid var(--line);border-radius:3px;padding:7px 11px;font-family:var(--mono);font-size:12.5px;color:var(--ink)}
+.urlbar span{color:var(--muted)}
+.btn{font-family:var(--display);font-size:13px;font-weight:600;padding:8px 15px;border-radius:3px;border:1px solid var(--accent);background:var(--accent);color:var(--surface-2);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent-ink)}
+.btn[disabled]{opacity:.45;cursor:default}
+.demo-body{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(270px,.75fr);gap:0}
+@media(max-width:860px){.demo-body{grid-template-columns:1fr}}
+.log{padding:14px 16px;min-height:326px;max-height:326px;overflow-y:auto;border-right:1px solid var(--line);font-family:var(--mono);font-size:11.5px;line-height:1.5}
+@media(max-width:860px){.log{border-right:0;border-bottom:1px solid var(--line)}}
+.log .ph{color:var(--accent-ink);letter-spacing:.1em;margin:11px 0 5px;font-weight:600}
+.log .ph:first-child{margin-top:0}
+.log .ln{display:grid;grid-template-columns:58px 1fr 74px;gap:9px;padding:2px 0;align-items:baseline;color:var(--ink-2)}
+.log .ln .cid{color:var(--muted)}
+.log .ln .rs{text-align:right;font-weight:600;font-size:10px;letter-spacing:.06em}
+.log .ln.pass .rs{color:var(--jade)}
+.log .ln.warn .rs{color:var(--accent-ink)}
+.log .ln.fail{color:var(--ink)}
+.log .ln.fail .rs{color:var(--rust)}
+.log .ln.fail .det{display:block;color:var(--rust);font-size:10.5px;margin-top:1px}
+.log .idle{color:var(--muted)}
+.demo-side{padding:14px 16px;display:flex;flex-direction:column;gap:12px}
+.gauge{text-align:center;padding:6px 0 2px}
+.gauge b{display:block;font-family:var(--display);font-size:54px;font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums;color:var(--muted)}
+.gauge b.done{color:var(--rust)}
+.gauge span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--muted);margin-top:6px}
+.verdict{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;text-align:center;padding:8px;border-radius:3px;background:var(--line-soft);color:var(--muted)}
+.verdict.bad{background:var(--rust-soft);color:var(--rust)}
+.findings{display:flex;flex-direction:column;gap:7px}
+.finding{border-left:2px solid var(--rust);background:var(--rust-soft);border-radius:2px;padding:8px 10px}
+.finding .fc{font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.06em;color:var(--rust)}
+.finding .ft{font-family:var(--display);font-size:12.5px;line-height:1.4;color:var(--ink);margin-top:3px}
+.demo-foot{border-top:1px solid var(--line);padding:11px 16px;font-family:var(--mono);font-size:10px;letter-spacing:.05em;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.fix{border:1px solid var(--line);border-radius:3px;background:var(--surface);overflow:hidden}
+.fix .fh{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:9px 12px;border-bottom:1px solid var(--line-soft)}
+.fix pre{margin:0;padding:11px 12px;font-family:var(--mono);font-size:11.5px;line-height:1.55;overflow-x:auto;color:var(--ink-2)}
+.fix .add{color:var(--jade)}
+.fix .del{color:var(--rust)}
+
+.arch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
 @media(max-width:820px){.arch{grid-template-columns:1fr}}
-.plane{border:1px solid var(--line);border-radius:3px;background:var(--surface);padding:14px}
-.plane .pl{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:6px}
-.plane h4{font-size:13.5px;margin-bottom:6px}
-.plane ul{margin:0;padding-left:15px;font-family:var(--display);font-size:12.5px;color:var(--ink-2);display:flex;flex-direction:column;gap:3px}
-.flowline{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--muted);text-align:center;padding:9px 0 0}
+.plane{border:1px solid var(--line);border-radius:3px;background:var(--surface);padding:13px}
+.plane .pl{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:6px}
+.plane h4{font-size:13px;margin-bottom:5px}
+.plane ul{margin:0;padding-left:14px;font-family:var(--display);font-size:12px;color:var(--ink-2);display:flex;flex-direction:column;gap:3px}
+.flowline{font-family:var(--mono);font-size:10px;letter-spacing:.05em;color:var(--muted);text-align:center;padding:8px 0 0}
 
-.ladder{display:flex;flex-direction:column;gap:5px}
-.rung{display:grid;grid-template-columns:44px minmax(0,1fr) 150px;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:2px;padding:9px 13px}
-.rung .lv{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--accent-ink)}
-.rung .ds{font-family:var(--display);font-size:13.5px;color:var(--ink-2)}
-.rung .ds b{color:var(--ink);font-weight:600}
-.rung .pv{font-family:var(--mono);font-size:10.5px;color:var(--muted);text-align:right}
-.rung.free{border-left-color:var(--jade)}
-@media(max-width:760px){.rung{grid-template-columns:40px 1fr}.rung .pv{display:none}}
-
-/* fee bar */
-.feebar{display:flex;height:40px;border-radius:3px;overflow:hidden;border:1px solid var(--line)}
-.feebar div{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10.5px;font-weight:600;color:#fff;overflow:hidden;white-space:nowrap}
+.feebar{display:flex;height:38px;border-radius:3px;overflow:hidden;border:1px solid var(--line)}
+.feebar div{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;font-weight:600;color:#fff;overflow:hidden;white-space:nowrap}
 .feebar .m{background:var(--surface-2);color:var(--ink-2);border-left:1px solid var(--line)}
-.legend{display:flex;flex-wrap:wrap;gap:14px;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:10px}
+.legend{display:flex;flex-wrap:wrap;gap:13px;font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:9px}
 .legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:middle}
 
-.kv{display:grid;grid-template-columns:auto 1fr;gap:7px 16px;font-family:var(--display);font-size:14px;margin:10px 0 0}
-.kv dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-family:var(--display);font-size:13.5px;margin:9px 0 0}
+.kv dt{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:3px}
 .kv dd{margin:0;color:var(--ink-2)}
 
-.panel{background:var(--surface);border:1px solid var(--accent);border-radius:3px;padding:20px}
-.panel .kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:14px}
-.panel .row{display:grid;grid-template-columns:230px 1fr;gap:10px 20px;padding:10px 0;border-top:1px solid var(--line-soft)}
+.panel{background:var(--surface);border:1px solid var(--accent);border-radius:3px;padding:18px}
+.panel .kicker{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:12px}
+.panel .row{display:grid;grid-template-columns:210px 1fr;gap:8px 18px;padding:9px 0;border-top:1px solid var(--line-soft)}
 .panel .row:first-of-type{border-top:0;padding-top:0}
-.panel .row .qq{font-family:var(--display);font-size:14.5px;font-weight:600;color:var(--ink)}
-.panel .row .aa{font-family:var(--display);font-size:14px;color:var(--ink-2);line-height:1.5}
-@media(max-width:700px){.panel .row{grid-template-columns:1fr;gap:4px}}
+.panel .row .qq{font-family:var(--display);font-size:14px;font-weight:600;color:var(--ink)}
+.panel .row .aa{font-family:var(--display);font-size:13.5px;color:var(--ink-2);line-height:1.45}
+@media(max-width:700px){.panel .row{grid-template-columns:1fr;gap:3px}}
 
-.footer{border-top:1px solid var(--line);padding:28px 0 48px;font-family:var(--display);font-size:12.5px;color:var(--muted);line-height:1.65}
+.footer{border-top:1px solid var(--line);padding:24px 0 44px;font-family:var(--display);font-size:12px;color:var(--muted);line-height:1.6}
 .footer b{color:var(--ink-2);font-weight:600}
 
 .reveal{opacity:0;transform:translateY(12px)}
 .reveal.in{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.bar .t i{transition:none}}
 
 @media print{
   body{background:#fff}
-  section.slide{break-after:page;padding:22px 0;border-top:0}
+  section.slide{break-after:page;padding:20px 0;border-top:0}
   .rail{position:static}
   .reveal{opacity:1;transform:none}
+  .log{max-height:none}
 }
 </style>
 
@@ -210,11 +239,11 @@ code{font-family:var(--mono);font-size:12.5px;color:var(--accent-ink)}
       <div>
         <div class="wordmark"><span class="dot"></span> GreenLane · Agentic Commerce Readiness Certifier</div>
         <h1 class="title">An agent can read<br>your store.<br><em>Can it pay?</em></h1>
-        <p class="lede">GreenLane runs a <strong>real agent-initiated purchase</strong> against a merchant's sandbox — signature challenge, checkout, delegated token, refund, dispute evidence — scores it, and issues a signed credential that agents, PSPs and issuers verify at runtime.</p>
+        <p class="lede">We run a <strong>real agent-initiated purchase</strong> against a merchant's sandbox — signature challenge, checkout, delegated token, refund, dispute evidence — score it, and issue a signed credential that agents, PSPs and issuers verify at runtime.</p>
         <div class="meta">
           <span class="tag">SMU FinTech Capstone</span>
           <span class="tag">10 min · 4 parts</span>
-          <span class="tag">5 concepts · 4 domains</span>
+          <span class="tag">Live demo in part 2</span>
           <span class="tag">Singapore first</span>
         </div>
       </div>
@@ -258,7 +287,7 @@ code{font-family:var(--mono);font-size:12.5px;color:var(--accent-ink)}
         <div><div class="d">APR 2025</div><div class="w">Mastercard Agent Pay</div><div class="x">Agentic Tokens extend MDES with agent identity, consent and step-up rules</div></div>
         <div><div class="d">SEP 2025</div><div class="w">ACP — OpenAI + Stripe</div><div class="x">Delegated payment tokens, merchant of record preserved</div></div>
         <div><div class="d">OCT 2025</div><div class="w">Visa TAP + Cloudflare</div><div class="x">Agent identity signed into HTTP headers, RFC 9421 over Web Bot Auth</div></div>
-        <div><div class="d">JAN 2026</div><div class="w">UCP — Google + Shopify</div><div class="x">Discovery to post-purchase; 20+ endorsers incl. Mastercard, Visa, Stripe</div></div>
+        <div><div class="d">JAN 2026</div><div class="w">UCP — Google + Shopify</div><div class="x">20+ endorsers including Mastercard, Visa, Stripe, Adyen</div></div>
         <div><div class="d">2026</div><div class="w">Verifiable Intent</div><div class="x">Different fraud scoring, liability assignment and chargeback procedure</div></div>
         <div><div class="d">JUL 2026</div><div class="w">MAS SAFR · PayNow Gen 2</div><div class="x">Runtime safeguards for AI agents; request-to-pay for agentic commerce</div></div>
       </div>
@@ -269,37 +298,26 @@ code{font-family:var(--mono);font-size:12.5px;color:var(--accent-ink)}
         <div class="stat hot"><b>Mar&nbsp;4</b><span>2026 — retired; checkout returns to merchants</span></div>
         <div class="stat"><b>0</b><span>of the reported causes were the payment rails</span></div>
       </div>
-      <p class="lede">The causes were <strong>merchant enablement</strong>: onboarding difficulty, inaccurate product data, no multi-item carts, no loyalty. Every one is a testable merchant-side defect — so the rubric started from a post-mortem, not a checklist.</p>
+      <p class="lede">The causes were <strong>merchant enablement</strong> — onboarding difficulty, inaccurate product data, no multi-item carts, no loyalty. All testable merchant-side defects. Our rubric started from that post-mortem, not from a checklist.</p>
 
-      <div class="quote">"We were told to be agent-ready. Four protocol specs, three network programmes, a WAF security won't open, and a PSP who says 'contact your representative.' I can't tell my CFO whether we're ready — or what it costs us if we're not."<cite>Head of Digital, S$20m–500m SEA merchant — our primary customer</cite></div>
+      <div class="quote">"Four protocol specs, three network programmes, a WAF security won't open, and a PSP who says 'contact your representative.' I can't tell my CFO whether we're ready — or what it costs us if we're not."<cite>Head of Digital, S$20m–500m SEA merchant — our primary customer</cite></div>
 
       <div class="qlist">
         <div class="q"><i>01</i><p><b>Is our WAF silently 403-ing verified agents?</b> Blocked agents look like blocked bots. The loss never enters a funnel report.</p></div>
-        <div class="q"><i>02</i><p><b>Does checkout complete for an agent?</b> Or only for a human with a mouse and a tolerance for a modal.</p></div>
+        <div class="q"><i>02</i><p><b>Does checkout complete for an agent?</b> Or only for a human with a mouse.</p></div>
         <div class="q"><i>03</i><p><b>If a token exceeds its cap, do we decline?</b> Or accept a charge whose liability we just assumed.</p></div>
-        <div class="q"><i>04</i><p><b>Can we defend it at dispute in five months?</b> Mandate, intent credential, agent identity — or an undefended chargeback.</p></div>
+        <div class="q"><i>04</i><p><b>Can we defend it at dispute in five months?</b> Or is it an undefended chargeback.</p></div>
       </div>
 
-      <div class="tbl">
-        <table>
-          <thead><tr><th>Free scanners already exist — Shopify, Vercel <em>Is Agentic</em>, agency audits</th><th style="width:120px">Them</th><th style="width:120px">GreenLane</th></tr></thead>
-          <tbody>
-            <tr><td>Discovery, feeds, structured data</td><td><span class="chip y">YES</span></td><td><span class="chip y">YES — free too</span></td></tr>
-            <tr><td>Signature accept/reject matrix · live checkout · totals parity</td><td><span class="chip n">NO</span></td><td><span class="chip y">YES</span></td></tr>
-            <tr><td>Delegated-token money leg · mandate-scope negatives · dispute evidence</td><td><span class="chip n">NO</span></td><td><span class="chip y">YES</span></td></tr>
-            <tr><td>Signed revocable credential, consumable by a PSP or issuer</td><td><span class="chip n">NO</span></td><td><span class="chip y">YES</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="note">They are SEO for agents. We certify the money leg. Their free reports are our top of funnel — a merchant who scores well on Vercel and then fails <code>GL-P4-02-OVERCAP</code> is our best sales conversation.</p>
+      <p class="note">Free scanners exist — Shopify's, Vercel's <em>Is Agentic</em>, agency audits. Every one scans the public front of the store: feeds, structured data, discoverability. <strong style="color:var(--ink)">Not one of them completes a purchase.</strong> They are SEO for agents; we certify the money leg. Their free reports are our top of funnel.</p>
     </div>
   </div></div>
 </section>
 
-<!-- 2 THE IDEA -->
+<!-- 2 THE IDEA + DEMO -->
 <section class="slide">
   <div class="wrap"><div class="slide-inner">
-    <div class="rail"><div class="num">2</div><div><b>The Idea</b><span>4 min</span></div></div>
+    <div class="rail"><div class="num">2</div><div><b>The Idea</b><span>4 min</span><span>Demo</span></div></div>
     <div class="stack-lg reveal">
       <div>
         <div class="eyebrow">The solution, step by step</div>
@@ -307,92 +325,76 @@ code{font-family:var(--mono);font-size:12.5px;color:var(--accent-ink)}
       </div>
 
       <div class="cards c3">
-        <div class="card"><div class="kicker">01 — Scan</div><h4>A headless agent buys something</h4><p>Discovery, an eight-way signature challenge, a real checkout session, delegated-token authorisation, mandate-scope negatives, idempotency, refund, dispute evidence. Merchant sandbox, test mode, compensating void on every auth.</p></div>
-        <div class="card"><div class="kicker">02 — Certify</div><h4>~120 checks, five pillars, one score</h4><p>Deterministic, versioned, evidence-backed <strong>GreenLane Score 0–1000</strong>. Issued as a 90-day W3C Verifiable Credential, published to a public registry, revoked in minutes when a weekly re-run regresses.</p></div>
-        <div class="card"><div class="kicker">03 — Remediate</div><h4>Failures come back as fixes</h4><p>A config change for Shopify; a pull request via GitHub App for custom stacks, carrying the check ID, evidence link, patch and a reproducing test. Plus a CI gate, so readiness can't silently rot.</p></div>
+        <div class="card"><div class="kicker">01 — Scan</div><h4>A headless agent buys something</h4><p>An eight-way signature challenge, a real checkout session, delegated-token authorisation, mandate-scope negatives, refund, dispute evidence. Sandbox only, test mode, compensating void on every auth.</p></div>
+        <div class="card"><div class="kicker">02 — Certify</div><h4>~120 checks, five pillars, one score</h4><p>Deterministic and evidence-backed. A 90-day W3C Verifiable Credential, published to a public registry, revoked in minutes when a weekly re-run regresses.</p></div>
+        <div class="card"><div class="kicker">03 — Remediate</div><h4>Failures come back as fixes</h4><p>A pull request through a GitHub App carrying the check ID, evidence link, patch and a reproducing test — plus a CI gate, so readiness can't silently rot.</p></div>
       </div>
 
+      <!-- ===== DEMO ===== -->
       <div>
-        <h3 class="sub">The user journey — 40 seconds to a number, three weeks to a badge</h3>
-        <div class="tbl"><table><tbody>
-          <tr><td class="id">DAY 1</td><td>Paste a URL. Free report in 40 seconds with a provisional score and the three biggest gaps.</td></tr>
-          <tr><td class="id">DAY 2</td><td>Prove the domain by DNS TXT → unlock protocol tests → <strong>discover the WAF is blocking verified Mastercard and Visa agents.</strong></td></tr>
-          <tr><td class="id">WEEK 2</td><td>Connect a PSP sandbox. The money leg runs and finds an over-cap token being accepted.</td></tr>
-          <tr><td class="id">WEEK 3</td><td>Remediation PRs merged, re-run passes, Gold issued, badge live at <code>/.well-known/greenlane-pass.json</code>.</td></tr>
-          <tr><td class="id">AGENT</td><td>At runtime: <code>GET /v1/pass?domain=</code> → Gold, zero open findings, verified 3 days ago. It buys here instead of from the competitor whose checkout would fail mid-conversation.</td></tr>
-        </tbody></table></div>
-      </div>
-
-      <div>
-        <h3 class="sub">The rubric — Money Integrity carries the most weight, because it is the pillar nobody else tests</h3>
-        <div class="tbl"><table>
-          <thead><tr><th style="width:44px">#</th><th style="width:200px">Pillar</th><th class="num-c" style="width:70px">Weight</th><th>Hard-fail examples</th></tr></thead>
-          <tbody>
-            <tr><td class="id">P1</td><td><strong>Discoverability</strong></td><td class="num-c">15%</td><td><code>/.well-known/ucp</code> truthful · feed↔PDP price and stock parity on 200 SKUs</td></tr>
-            <tr><td class="id">P2</td><td><strong>Agent Identity &amp; Access</strong></td><td class="num-c">20%</td><td>Bot management does not block verified agents — no CAPTCHA, no JS challenge</td></tr>
-            <tr><td class="id">P3</td><td><strong>Machine Checkout</strong></td><td class="num-c">25%</td><td>Totals correct to the cent · multi-item cart · idempotency: 3 replays, one charge</td></tr>
-            <tr><td class="id">P4</td><td><strong>Money Integrity</strong></td><td class="num-c">30%</td><td>Over-cap, wrong-MCC, expired and revoked tokens all decline · intent credential verified before capture · dispute evidence retrievable</td></tr>
-            <tr><td class="id">P5</td><td><strong>Governance &amp; Audit</strong></td><td class="num-c">10%</td><td>SAFR audit envelope · consent retained for the dispute window · PDPA</td></tr>
-          </tbody>
-        </table></div>
-        <div class="cards c4" style="margin-top:12px">
-          <div class="stat good"><b>≥850</b><span>GOLD — autonomous purchase safe</span></div>
-          <div class="stat"><b>≥700</b><span>SILVER — safe with step-up on high value</span></div>
-          <div class="stat"><b>≥550</b><span>BRONZE — needs human confirmation</span></div>
-          <div class="stat hot"><b>P4</b><span>Any Money Integrity hard-fail = not certified, at any score</span></div>
+        <h3 class="sub">Run it — this is the product, not a mockup of one</h3>
+        <div class="demo">
+          <div class="demo-head">
+            <span class="lbl">Certification run</span>
+            <div class="urlbar"><span>https://</span>demo-merchant.sg</div>
+            <button class="btn" id="run">Run scan</button>
+            <button class="btn ghost" id="skip" disabled>Skip to result</button>
+            <button class="btn ghost" id="reset" disabled>Reset</button>
+          </div>
+          <div class="demo-body">
+            <div class="log" id="log" aria-live="polite" aria-label="Certification run log">
+              <p class="idle">Idle. Press <strong>Run scan</strong> to execute L0 through L4 against the demo storefront.</p>
+            </div>
+            <div class="demo-side">
+              <div class="gauge"><b id="score">—</b><span>GREENLANE SCORE / 1000</span></div>
+              <div class="verdict" id="verdict">AWAITING RUN</div>
+              <div class="findings" id="findings"></div>
+            </div>
+          </div>
+          <div class="demo-foot">
+            <span id="progress">0 / 26 checks</span>
+            <span>SCRIPTED DEMO · FIXED DATA · NO LIVE NETWORK CALLS</span>
+          </div>
         </div>
+
+        <div class="fix" id="fixblock" hidden style="margin-top:12px">
+          <div class="fh">Remediation — pull request opened automatically for GL-P2-10-BLOCKED</div>
+          <pre><span class="del">- # WAF: challenge all non-browser user agents</span>
+<span class="del">- rule "bot_challenge" { when not is_browser() then js_challenge }</span>
+<span class="add">+ # Allow agents whose RFC 9421 signature verifies against a network directory</span>
+<span class="add">+ rule "verified_agent_bypass" {</span>
+<span class="add">+   when web_bot_auth.verified and signature.tag == "agent-payer-auth"</span>
+<span class="add">+   then allow</span>
+<span class="add">+ }</span>
+<span class="add">+ rule "bot_challenge" { when not is_browser() then js_challenge }</span></pre>
+        </div>
+        <p class="note" style="margin-top:10px">Two of those three findings are invisible to every existing tool and to the merchant's own analytics. The over-cap approval is the expensive one: that charge is a chargeback the merchant will lose, on liability the network assumed was covered.</p>
       </div>
 
       <div>
-        <h3 class="sub">The check no merchant can run on themselves — one request, eight ways</h3>
+        <h3 class="sub">What it scored against — five pillars, and the concepts behind them</h3>
         <div class="tbl"><table>
-          <thead><tr><th style="width:60px">ID</th><th>Variant</th><th style="width:190px">Required behaviour</th></tr></thead>
+          <thead><tr><th style="width:40px">#</th><th style="width:180px">Pillar</th><th class="num-c" style="width:64px">Weight</th><th>Hard-fail examples</th></tr></thead>
           <tbody>
-            <tr><td class="id">P2.01</td><td>Valid RFC 9421 signature, key in <strong>Visa TAP</strong> directory, <code>tag=agent-payer-auth</code></td><td><span class="chip y">ACCEPT</span> no CAPTCHA</td></tr>
-            <tr><td class="id">P2.02</td><td>Valid signature, key in <strong>Mastercard Agent Pay</strong> directory</td><td><span class="chip y">ACCEPT</span></td></tr>
-            <tr><td class="id">P2.03</td><td><code>tag=agent-browser-auth</code> on a checkout endpoint</td><td><span class="chip n">REJECT</span> wrong tag</td></tr>
-            <tr><td class="id">P2.04–05</td><td>Expired <code>created</code>/<code>expires</code> window · replayed <code>nonce</code></td><td><span class="chip n">REJECT</span></td></tr>
-            <tr><td class="id">P2.06–07</td><td><code>keyid</code> in no directory · tampered body</td><td><span class="chip n">REJECT</span> or step-up</td></tr>
-            <tr><td class="id">P2.08</td><td>Unsigned request with an agent-like User-Agent</td><td><span class="chip n">REJECT</span> never silently accept</td></tr>
+            <tr><td class="id">P1</td><td><strong>Discoverability</strong></td><td class="num-c">15%</td><td>Manifest truthful · feed↔PDP price and stock parity on 200 SKUs</td></tr>
+            <tr><td class="id">P2</td><td><strong>Agent Identity</strong></td><td class="num-c">20%</td><td>Bot management does not block verified agents</td></tr>
+            <tr><td class="id">P3</td><td><strong>Machine Checkout</strong></td><td class="num-c">25%</td><td>Totals correct to the cent · multi-item cart · 3 replays, one charge</td></tr>
+            <tr><td class="id">P4</td><td><strong>Money Integrity</strong></td><td class="num-c">30%</td><td>Over-cap, wrong-MCC, expired and revoked tokens all decline · dispute evidence retrievable</td></tr>
+            <tr><td class="id">P5</td><td><strong>Governance</strong></td><td class="num-c">10%</td><td>SAFR audit envelope · consent retained · PDPA</td></tr>
           </tbody>
         </table></div>
-        <p class="note" style="margin-top:10px">Catches both invisible failure modes: a WAF that 403s every verified agent, and an origin that accepts anything calling itself one.</p>
+        <p class="note" style="margin-top:10px"><strong style="color:var(--ink)">Five concepts, four domains.</strong> <em>Agentic commerce</em> — conformance to UCP, ACP, AP2, Agent Pay, Visa TAP. <em>Payments foundations</em> — the rubric follows the transaction's anatomy, and the score is priced into the fee stack. <em>Data-driven finance</em> — telemetry becomes a risk signal sold to issuers, and certification is deliberately rule-based so ML can never hard-fail a merchant. <em>Platforms &amp; infrastructure</em> — a registry agents read, a portfolio PSPs resell. <em>PayFi</em> — x402 and PayNow request-to-pay as alternate rails.</p>
       </div>
 
       <div>
-        <h3 class="sub">Which concepts, and how</h3>
-        <div class="tbl"><table>
-          <thead><tr><th style="width:210px">Bootcamp concept</th><th>Load-bearing use</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Emerging payments — agentic commerce</strong></td><td>Conformance testing against UCP, ACP, AP2, Agent Pay agentic tokens, Visa TAP, Web Bot Auth</td></tr>
-            <tr><td><strong>Payments foundations — 4-party model, transaction anatomy, fees</strong></td><td>The rubric follows the transaction's real anatomy — auth, capture, refund, dispute — and the score is priced into the fee stack</td></tr>
-            <tr><td><strong>Data-driven finance — rule-based vs AI/ML decisioning</strong></td><td>Scan telemetry becomes a risk signal sold to issuers. Certification is deliberately <strong>rule-based</strong> for auditability; ML only calibrates, and can never hard-fail a merchant</td></tr>
-            <tr><td><strong>Platforms &amp; infrastructure — the pipes</strong></td><td>A registry agents read, a portfolio product PSPs resell, a signal issuers score at authorisation</td></tr>
-            <tr><td><strong>Crypto &amp; PayFi</strong></td><td>Optional module — x402 / stablecoin rails tested as an alternate settlement path, alongside PayNow request-to-pay</td></tr>
-          </tbody>
-        </table></div>
-      </div>
-
-      <div>
-        <h3 class="sub">How it's built — a certification run is a transaction saga, not a crawl</h3>
+        <h3 class="sub">How it's built — a run is a transaction saga, not a crawl</h3>
         <div class="arch">
-          <div class="plane"><div class="pl">Control plane</div><h4>Tenant, contract, credential</h4><ul><li>Next.js 15 · Hono/TypeScript API</li><li><strong>Temporal</strong> workflow orchestration</li><li>VC issuance in an AWS KMS HSM</li><li>Edge registry + revocation list</li></ul></div>
-          <div class="plane"><div class="pl">Probe plane</div><h4>The only thing touching merchants</h4><ul><li>Ephemeral single-use Fargate task</li><li>Playwright + raw <code>undici</code> for byte-exact signatures</li><li>Claude journey agent, MCP client</li><li>Published static egress IPs, no long-lived secrets</li></ul></div>
-          <div class="plane"><div class="pl">Scoring plane</div><h4>Deterministic, replayable</h4><ul><li>Rules-as-code: YAML → compiled predicates</li><li>LLM adjudicator advisory only, weight 0</li><li>Evidence → Merkle root → S3 Object Lock</li><li>ClickHouse cross-merchant benchmarks</li></ul></div>
+          <div class="plane"><div class="pl">Control plane</div><h4>Tenant, contract, credential</h4><ul><li>Next.js 15 · Hono/TypeScript</li><li><strong>Temporal</strong> orchestration</li><li>Credential signed in a KMS HSM</li><li>Edge registry + revocation list</li></ul></div>
+          <div class="plane"><div class="pl">Probe plane</div><h4>The only thing touching merchants</h4><ul><li>Ephemeral single-use Fargate task</li><li>Playwright + raw <code>undici</code> for byte-exact signatures</li><li>Claude journey agent, MCP client</li><li>Published egress IPs, no long-lived secrets</li></ul></div>
+          <div class="plane"><div class="pl">Scoring plane</div><h4>Deterministic, replayable</h4><ul><li>Rules-as-code, versioned</li><li>LLM advisory only, weight 0</li><li>Evidence → S3 Object Lock</li><li>ClickHouse benchmarks</li></ul></div>
         </div>
         <div class="flowline">merchant ▸ probe ▸ immutable evidence ▸ scoring ▸ credential ▸ registry ▸ agents · PSPs · issuers</div>
-      </div>
-
-      <div>
-        <h3 class="sub">Privilege rises with depth — and so does defensibility</h3>
-        <div class="ladder">
-          <div class="rung free"><span class="lv">L0</span><span class="ds"><b>Passive surface</b> — robots/llms.txt, <code>/.well-known/ucp</code>, feeds, schema.org</span><span class="pv">Free · ~30s</span></div>
-          <div class="rung free"><span class="lv">L1</span><span class="ds"><b>Protocol conformance</b> — schemas, capability negotiation, the 8-way signature matrix</span><span class="pv">Domain proof · ~2 min</span></div>
-          <div class="rung"><span class="lv">L2</span><span class="ds"><b>Agent journey</b> — discovery → cart → session; totals parity across feed, PDP, session</span><span class="pv">Sandbox · 5–15 min</span></div>
-          <div class="rung"><span class="lv">L3</span><span class="ds"><b>Money leg</b> — auth, mandate negatives, double-charge, refund, dispute evidence</span><span class="pv">PSP sandbox · 10–25 min</span></div>
-          <div class="rung"><span class="lv">L4</span><span class="ds"><b>Governance</b> — SAFR envelope, consent retention, PDPA, residency</span><span class="pv">Attested · ~3 min</span></div>
-        </div>
-        <p class="note" style="margin-top:10px">L0–L1 are free and are the whole top of funnel. L3 is the paid product and the moat: it needs a contract, a sandbox and a PSP relationship — exactly why every free scanner stops at L1. Marginal cost of a full run: <strong>S$0.70</strong>. Never touches a PAN; test mode enforced before the first request and on every auth response.</p>
+        <p class="note" style="margin-top:10px">L0–L1 are free and are the whole top of funnel. L3 — the money leg — needs a contract, a sandbox and a PSP relationship, which is exactly why every free scanner stops at L1. Marginal cost of a full run: <strong style="color:var(--ink)">S$0.70</strong>. Never touches a PAN; test mode enforced before the first request and on every auth response.</p>
       </div>
     </div>
   </div></div>
@@ -411,7 +413,7 @@ code{font-family:var(--mono);font-size:12.5px;color:var(--accent-ink)}
       <div class="tbl"><table>
         <thead><tr><th>Segment</th><th>Product</th><th class="num-c">Price — SGD, illustrative</th></tr></thead>
         <tbody>
-          <tr><td>Merchant — self-serve</td><td>L0/L1 free scan, public report</td><td class="num-c">S$0 · funnel</td></tr>
+          <tr><td>Merchant — self-serve</td><td>Free scan, public report</td><td class="num-c">S$0 · funnel</td></tr>
           <tr><td>Merchant — SMB</td><td>Certification, one domain, 4 cycles/yr</td><td class="num-c">S$4,800/yr</td></tr>
           <tr><td>Merchant — mid-market</td><td>Certification + monitoring + CI gate</td><td class="num-c">S$1,200/mo</td></tr>
           <tr><td><strong>PSP / acquirer</strong></td><td>Portfolio scoring, white-labelled</td><td class="num-c">S$180/merchant/yr</td></tr>
@@ -434,7 +436,7 @@ code{font-family:var(--mono);font-size:12.5px;color:var(--accent-ink)}
           <span><i style="background:var(--rust)"></i>Acquirer + PSP S$1.40</span>
           <span><i style="background:var(--accent)"></i>Agent platform take S$2.50 — the new entrant</span>
         </div>
-        <p class="lede" style="margin-top:16px">The costs we attack aren't in that table — they're the leakage underneath it: <strong>blocked verified agents</strong> that never enter a funnel, <strong>failed agent checkouts</strong>, <strong>disputes lost for want of evidence</strong>, and <strong>liability wrongly assumed</strong> on an out-of-scope token. For a S$50m merchant, recovering 0.2% of leaked agentic volume dwarfs a S$14k subscription — and the free scan sizes that number before they speak to sales.</p>
+        <p class="lede" style="margin-top:14px">The costs we attack aren't in that table — they're the leakage underneath it: <strong>blocked verified agents</strong>, <strong>failed checkouts</strong>, <strong>disputes lost for want of evidence</strong>, <strong>liability wrongly assumed</strong>. For a S$50m merchant, recovering 0.2% of leaked agentic volume dwarfs a S$14k subscription — and the free scan sizes that number before they speak to sales.</p>
       </div>
 
       <div class="cards c4">
@@ -444,10 +446,7 @@ code{font-family:var(--mono);font-size:12.5px;color:var(--accent-ink)}
         <div class="stat good"><b>90 days</b><span>Certificate life — churn means going dark on a badge agents already read</span></div>
       </div>
 
-      <div class="cards c2">
-        <div class="card"><div class="kicker">Why a network buys this</div><h4>Verifiable Intent assumes the merchant side holds. Nothing observes whether it does.</h4><p>It changes fraud scoring, liability assignment and chargeback procedure — but only if the merchant integration actually enforces the mandate. A registered merchant accepting over-cap tokens is a liability carried blind.</p></div>
-        <div class="card"><div class="kicker">The product for them</div><h4>A per-inquiry readiness signal with stable reason codes</h4><p><code>GL-P4-02-OVERCAP</code> · <code>GL-P2-10-BLOCKED</code> · <code>GL-P4-12-NOEVIDENCE</code> — machine-actionable at authorisation, in the shape a network already sells VAS. It makes the liability framework <strong>enforceable rather than aspirational</strong>.</p></div>
-      </div>
+      <div class="card"><div class="kicker">Why a network buys this</div><h4>Verifiable Intent assumes the merchant side holds. Nothing observes whether it does.</h4><p>It changes fraud scoring, liability assignment and chargeback procedure — but only if the merchant integration actually enforces the mandate, and the demo you just watched shows one that doesn't. A registered merchant approving over-cap tokens is a liability carried blind. We sell a per-inquiry readiness signal with stable reason codes — <code>GL-P4-02-OVERCAP</code>, <code>GL-P2-10-BLOCKED</code> — machine-actionable at authorisation, in the shape a network already sells VAS. It makes the liability framework <strong style="color:var(--ink)">enforceable rather than aspirational</strong>.</p></div>
     </div>
   </div></div>
 </section>
@@ -464,37 +463,23 @@ code{font-family:var(--mono);font-size:12.5px;color:var(--accent-ink)}
 
       <div class="cards c3">
         <div class="card"><div class="kicker">Regulatory</div><h4>No MAS licence required, by design</h4><p>MAS created no separate category for AI-initiated payments — existing consumer protection, AML and KYC apply, and the agent is an extension of the account holder. We hold no funds and move no real money, so no PS Act licence. PDPA residency in <code>ap-southeast-1</code>; SOC 2 Type II before the first FI contract.</p></div>
-        <div class="card"><div class="kicker">Anchor</div><h4>SAFR turns a white paper into a line item</h4><p>Pillar P5 scores the merchant's audit envelope against SAFR's four pillars — policy-bound execution, real-time validation, auditability, interoperability. A merchant can be measured on it, not just briefed on it.</p></div>
+        <div class="card"><div class="kicker">Anchor</div><h4>SAFR turns a white paper into a line item</h4><p>Pillar P5 scores the merchant's audit envelope against SAFR's four pillars — policy-bound execution, real-time validation, auditability, interoperability. Measurable, not just briefed on.</p></div>
         <div class="card"><div class="kicker">Legal</div><h4>Assurance, not indemnity</h4><p>The credential asserts observed behaviour of a named domain under a named rubric version at a timestamp — explicitly not a warranty. Backed by professional indemnity cover before the first paid certificate.</p></div>
       </div>
 
       <div class="tbl"><table>
-        <thead><tr><th style="width:210px">Risk</th><th style="width:86px">Severity</th><th>Mitigation</th></tr></thead>
+        <thead><tr><th style="width:200px">Risk</th><th style="width:80px">Severity</th><th>Mitigation</th></tr></thead>
         <tbody>
-          <tr><td><strong>Protocol churn</strong> — UCP, ACP, AP2, TAP all move</td><td><span class="chip n">HIGH</span></td><td>Adapter per protocol; rubric pinned into every certificate; CI watches the spec repos and auto-opens a rubric-change PR. Churn is monitored, not discovered from a customer email.</td></tr>
-          <tr><td><strong>Sandbox access</strong> for the money leg</td><td><span class="chip n">HIGH</span></td><td>The PSP partnership is the wedge, not an afterthought — enrol through the PSP and sandbox access arrives with the merchant.</td></tr>
+          <tr><td><strong>Protocol churn</strong> — UCP, ACP, AP2, TAP all move</td><td><span class="chip n">HIGH</span></td><td>Adapter per protocol; rubric pinned into every certificate; CI watches the spec repos and auto-opens a rubric-change PR. Monitored, not discovered from a customer email.</td></tr>
+          <tr><td><strong>Sandbox access</strong> for the money leg</td><td><span class="chip n">HIGH</span></td><td>The PSP partnership is the wedge — enrol through the PSP and sandbox access arrives with the merchant.</td></tr>
           <tr><td><strong>False positives</strong> damaging trust</td><td><span class="chip n">HIGH</span></td><td>Only deterministic checks hard-fail; every finding carries replayable evidence; published appeals path where the stored artifact settles it.</td></tr>
-          <tr><td><strong>Accidentally moving real money</strong></td><td><span class="chip n">CRITICAL</span></td><td>Live-key abort before the first request and on every auth response; guaranteed compensating void; destructive probes blocked on explicit consent.</td></tr>
+          <tr><td><strong>Moving real money by accident</strong></td><td><span class="chip n">CRITICAL</span></td><td>Live-key abort before the first request and on every auth response; guaranteed compensating void; destructive probes blocked on explicit consent.</td></tr>
+          <tr><td><strong>Agentic commerce stalls</strong></td><td><span class="chip a">MEDIUM</span></td><td>L0/L1 has value the moment agents merely <em>read</em> stores — already true and growing, independent of whether agent checkout wins.</td></tr>
+          <tr><td><strong>A network or platform ships this free</strong></td><td><span class="chip a">MEDIUM</span></td><td>Be the neutral cross-network certifier. Mastercard won't certify Visa's protocol; Shopify won't certify a non-Shopify store. Neutrality is the one position no incumbent can occupy.</td></tr>
         </tbody>
       </table></div>
 
-      <div>
-        <h3 class="sub">Partner sequencing — the credential is only worth what its consumers make it worth</h3>
-        <div class="tbl"><table>
-          <thead><tr><th style="width:170px">Partner</th><th>What we need</th><th>What they get</th></tr></thead>
-          <tbody>
-            <tr><td><strong>1 · PSP / acquirer</strong></td><td>Sandbox access + portfolio distribution</td><td>A readiness product for merchants they must now enrol into agentic programmes</td></tr>
-            <tr><td><strong>2 · Platforms</strong></td><td>App store distribution</td><td>Their merchants pass; their protocol adoption numbers improve</td></tr>
-            <tr><td><strong>3 · Network</strong></td><td>Recognition of the credential</td><td>Observable merchant-side conformance; an enforceable liability framework; a VAS revenue line</td></tr>
-          </tbody>
-        </table></div>
-      </div>
-
-      <div class="cards c3">
-        <div class="card"><div class="kicker">Kill risk 01</div><h4>Agentic commerce stalls</h4><p>Instant Checkout's retirement says the timing risk is real. <strong>Mitigation:</strong> L0/L1 has value the moment agents merely <em>read</em> stores — already true, already growing, independent of whether agent checkout wins.</p></div>
-        <div class="card"><div class="kicker">Kill risk 02</div><h4>A network or platform ships this free</h4><p>The most likely outcome. <strong>Mitigation:</strong> be the neutral cross-network certifier. Mastercard won't certify Visa's protocol; Shopify won't certify a non-Shopify store. Neutrality is the one position no incumbent can occupy.</p></div>
-        <div class="card"><div class="kicker">Kill risk 03</div><h4>The credential never gets consumed</h4><p>The one that actually matters. <strong>Mitigation:</strong> the merchant product is sold on merchant-facing ROI alone. Registry and risk-signal revenue are upside, not the base case.</p></div>
-      </div>
+      <p class="note">Partner sequencing: <strong style="color:var(--ink)">PSP first</strong> for sandboxes and distribution, <strong style="color:var(--ink)">platforms second</strong> for volume, <strong style="color:var(--ink)">network third</strong> — the signal business only makes sense once coverage exists.</p>
     </div>
   </div></div>
 </section>
@@ -507,8 +492,8 @@ code{font-family:var(--mono);font-size:12.5px;color:var(--accent-ink)}
       <div class="panel">
         <div class="kicker">What the panel is looking for</div>
         <div class="row"><div class="qq">Real customer problem?</div><div class="aa">A product with OpenAI's distribution died of it in March 2026. Merchants can't answer four questions today, and the loss is invisible in their own analytics.</div></div>
-        <div class="row"><div class="qq">Intuitive user journey?</div><div class="aa">Paste a URL, get a number in 40 seconds. Prove the domain, get the truth. Connect a sandbox, get certified. Fixes arrive as pull requests, not PDFs.</div></div>
-        <div class="row"><div class="qq">Would people actually use it?</div><div class="aa">Free scanners already get used at volume — that demand is proven. We start where they stop, and the certificate expires in 90 days with a CI gate wired into the deploy pipeline, so usage is structural rather than optional.</div></div>
+        <div class="row"><div class="qq">Intuitive user journey?</div><div class="aa">You just watched it. Paste a URL, get a number and three findings. Fixes arrive as pull requests, not PDFs.</div></div>
+        <div class="row"><div class="qq">Would people actually use it?</div><div class="aa">Free scanners are already used at volume — that demand is proven. We start where they stop, and the certificate expires in 90 days with a CI gate in the deploy pipeline, so usage is structural rather than optional.</div></div>
       </div>
 
       <div class="cards c2">
@@ -518,7 +503,7 @@ code{font-family:var(--mono);font-size:12.5px;color:var(--accent-ink)}
           <dt>Partners</dt><dd>One PSP live; one issuer consuming the risk signal in a pilot authorisation flow</dd>
           <dt>Roadmap</dt><dd>Wk 1–6 free scanner · 7–12 first paid certificates · 13–20 Shopify app + PSP · 21–30 network signal</dd>
         </dl></div>
-        <div class="card"><div class="kicker">Why Singapore, why now</div><h4>The window between a standard shipping and the market conforming to it</h4><p>SAFR anchors the rubric in local regulation. PayNow Gen 2 gives a non-card agentic rail nobody else is testing. SEA's first authenticated agentic transaction happened here in March 2026. And the merchant base is concentrated enough that <strong>one PSP partnership reaches thousands of merchants</strong>.</p></div>
+        <div class="card"><div class="kicker">Why Singapore, why now</div><h4>The window between a standard shipping and the market conforming to it</h4><p>SAFR anchors the rubric in local regulation. PayNow Gen 2 gives a non-card agentic rail nobody else is testing. SEA's first authenticated agentic transaction happened here in March 2026. And the merchant base is concentrated enough that <strong style="color:var(--ink)">one PSP partnership reaches thousands of merchants</strong>.</p></div>
       </div>
     </div>
   </div></div>
@@ -529,8 +514,8 @@ code{font-family:var(--mono);font-size:12.5px;color:var(--accent-ink)}
     <div class="rail"><b>Notes</b><span>Sources</span></div>
     <div>
       <p><b>Sourced:</b> Mastercard Agent Pay (Apr 2025), agentic tokens, Verifiable Intent · Visa Trusted Agent Protocol with Cloudflare (Oct 2025) · Google/Shopify UCP (NRF, Jan 2026) · Stripe/OpenAI ACP (Sep 2025) · CNBC on the Instant Checkout retirement (24 Mar 2026) · MAS SAFR, BuildFin.ai (Jul 2026) · MAS/ABS PayNow Generation 2 · Shopify commerce-readiness tool and Vercel <em>Is Agentic</em> (Aug 2026).</p>
-      <p style="margin-top:8px"><b>Illustrative:</b> all pricing, unit economics, the S$100 fee split and the example credential. Fee percentages are indicative SEA card-not-present figures showing the shape of the stack, not quoted rates.</p>
-      <p style="margin-top:12px">GreenLane · SMU FinTech Bootcamp capstone · Rubric v1.0 · August 2026</p>
+      <p style="margin-top:7px"><b>Illustrative:</b> all pricing, unit economics, the S$100 fee split and both credentials. <b>The demo is scripted</b> — fixed data on a fictional storefront, no live network calls — and shows the run our architecture is built to execute, not a run we have executed against a real merchant.</p>
+      <p style="margin-top:11px">GreenLane · SMU FinTech Bootcamp capstone · Rubric v1.0 · August 2026</p>
     </div>
   </div></div>
 </footer>
@@ -539,13 +524,176 @@ code{font-family:var(--mono);font-size:12.5px;color:var(--accent-ink)}
 
 <script>
 (function(){
-  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- scroll reveal ---------- */
+  if (reduce) {
     document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
-    return;
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+    document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
   }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
-  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
-  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+
+  /* ---------- scripted certification run ---------- */
+  var PHASES = [
+    { id: "L0", name: "PASSIVE SURFACE", checks: [
+      { id:"P1.01", label:"/.well-known/ucp manifest parses", r:"PASS" },
+      { id:"P1.03", label:"ACP product feed reachable, refreshed 4h ago", r:"PASS" },
+      { id:"P1.04", label:"schema.org Product + Offer on 200 PDPs", r:"PASS" },
+      { id:"P1.05", label:"Feed ↔ PDP parity, 200-SKU sample", r:"WARN", det:"3 SKUs serving a stale price" },
+      { id:"P1.07", label:"robots.txt / llms.txt agent policy declared", r:"PASS" }
+    ]},
+    { id: "L1", name: "SIGNATURE CHALLENGE MATRIX", checks: [
+      { id:"P2.01", label:"Valid RFC 9421 sig, Visa TAP key, agent-payer-auth", r:"FAIL", det:"expected ACCEPT → origin returned 403 + JS challenge" },
+      { id:"P2.02", label:"Valid sig, Mastercard Agent Pay directory key", r:"FAIL", det:"expected ACCEPT → origin returned 403" },
+      { id:"P2.03", label:"agent-browser-auth tag on checkout endpoint", r:"PASS" },
+      { id:"P2.04", label:"Expired created/expires window", r:"PASS" },
+      { id:"P2.05", label:"Replayed nonce", r:"PASS" },
+      { id:"P2.06", label:"keyid in no registered directory", r:"PASS" },
+      { id:"P2.07", label:"Tampered body, valid signature", r:"PASS" },
+      { id:"P2.08", label:"Unsigned request, agent-like User-Agent", r:"FAIL", det:"expected REJECT or step-up → origin returned 200 OK" }
+    ]},
+    { id: "L2", name: "AGENT JOURNEY", checks: [
+      { id:"P3.01", label:"POST /checkout-sessions accepted", r:"PASS" },
+      { id:"P3.02", label:"Totals reconcile to the cent incl. tax + shipping", r:"PASS" },
+      { id:"P3.04", label:"Multi-item cart, 3 SKUs, mixed variants", r:"PASS" },
+      { id:"P3.05", label:"Idempotency: key replayed 3×", r:"PASS", det:"1 order, 1 charge" },
+      { id:"P3.07", label:"Price change mid-session surfaced", r:"WARN", det:"absorbed silently, agent not notified" }
+    ]},
+    { id: "L3", name: "MONEY LEG · TEST MODE", checks: [
+      { id:"P4.01", label:"Agentic token accepted to authorisation", r:"PASS" },
+      { id:"P4.02", label:"Over-cap: S$240 against a S$200 mandate cap", r:"FAIL", det:"expected DECLINE → APPROVED, auth code 00" },
+      { id:"P4.03", label:"Out-of-scope MCC", r:"PASS", det:"declined correctly" },
+      { id:"P4.04", label:"Expired mandate window", r:"PASS", det:"declined correctly" },
+      { id:"P4.10", label:"Double-charge probe: timeout then retry", r:"PASS" },
+      { id:"P4.11", label:"Refund via API reflected in order state", r:"PASS" },
+      { id:"P4.12", label:"Dispute evidence bundle retrievable", r:"FAIL", det:"mandate + intent credential not retained" }
+    ]},
+    { id: "L4", name: "GOVERNANCE", checks: [
+      { id:"P5.01", label:"SAFR audit envelope per transaction", r:"WARN", det:"no pre-execution policy record" },
+      { id:"P5.06", label:"PDPA: no PII in agent-facing feeds", r:"PASS" }
+    ]}
+  ];
+
+  var FINDINGS = [
+    { code:"GL-P2-10-BLOCKED",   text:"Your WAF challenges every verified Mastercard and Visa agent. Revenue lost with no trace in your funnel." },
+    { code:"GL-P4-02-OVERCAP",   text:"You approved a charge S$40 over its mandate cap. That is a chargeback you lose, on liability the network assumed was covered." },
+    { code:"GL-P4-12-NOEVIDENCE",text:"No mandate or intent credential retained. Agent disputes are undefendable." }
+  ];
+
+  var FINAL = 612, TOTAL = 26;
+
+  var log = document.getElementById("log"),
+      scoreEl = document.getElementById("score"),
+      verdictEl = document.getElementById("verdict"),
+      findEl = document.getElementById("findings"),
+      progEl = document.getElementById("progress"),
+      fixEl = document.getElementById("fixblock"),
+      runBtn = document.getElementById("run"),
+      skipBtn = document.getElementById("skip"),
+      resetBtn = document.getElementById("reset");
+
+  var timers = [], done = 0, running = false;
+
+  function clearTimers(){ timers.forEach(clearTimeout); timers = []; }
+
+  function lineNode(c){
+    var d = document.createElement("div");
+    d.className = "ln " + c.r.toLowerCase();
+    var det = c.det ? '<span class="det">' + c.det + "</span>" : "";
+    d.innerHTML = '<span class="cid">' + c.id + '</span><span>' + c.label + det + '</span><span class="rs">' + c.r + "</span>";
+    return d;
+  }
+  function phaseNode(p){
+    var h = document.createElement("p");
+    h.className = "ph";
+    h.textContent = "▸ " + p.id + "  " + p.name;
+    return h;
+  }
+  function bump(){ done++; progEl.textContent = done + " / " + TOTAL + " checks"; }
+
+  function finish(){
+    running = false;
+    scoreEl.textContent = FINAL;
+    scoreEl.classList.add("done");
+    verdictEl.textContent = "NOT CERTIFIED · 3 HARD FAILS";
+    verdictEl.classList.add("bad");
+    findEl.innerHTML = FINDINGS.map(function(f){
+      return '<div class="finding"><div class="fc">' + f.code + '</div><div class="ft">' + f.text + "</div></div>";
+    }).join("");
+    progEl.textContent = TOTAL + " / " + TOTAL + " checks · evidence sealed";
+    fixEl.hidden = false;
+    skipBtn.disabled = true;
+    resetBtn.disabled = false;
+  }
+
+  function renderAll(){
+    log.innerHTML = "";
+    PHASES.forEach(function(p){
+      log.appendChild(phaseNode(p));
+      p.checks.forEach(function(c){ log.appendChild(lineNode(c)); bump(); });
+    });
+    log.scrollTop = log.scrollHeight;
+    finish();
+  }
+
+  function run(){
+    if (running) return;
+    running = true; done = 0;
+    log.innerHTML = "";
+    findEl.innerHTML = "";
+    fixEl.hidden = true;
+    scoreEl.textContent = "—";
+    scoreEl.classList.remove("done");
+    verdictEl.textContent = "RUNNING";
+    verdictEl.classList.remove("bad");
+    runBtn.disabled = true;
+    skipBtn.disabled = false;
+    resetBtn.disabled = false;
+
+    if (reduce) { renderAll(); return; }
+
+    var t = 0;
+    PHASES.forEach(function(p){
+      timers.push(setTimeout(function(){
+        log.appendChild(phaseNode(p));
+        log.scrollTop = log.scrollHeight;
+      }, t));
+      t += 320;
+      p.checks.forEach(function(c){
+        timers.push(setTimeout(function(){
+          log.appendChild(lineNode(c));
+          log.scrollTop = log.scrollHeight;
+          bump();
+        }, t));
+        t += (c.r === "FAIL") ? 320 : 150;
+      });
+    });
+    timers.push(setTimeout(finish, t + 350));
+  }
+
+  function skip(){ clearTimers(); done = 0; renderAll(); }
+
+  function reset(){
+    clearTimers();
+    running = false; done = 0;
+    log.innerHTML = '<p class="idle">Idle. Press <strong>Run scan</strong> to execute L0 through L4 against the demo storefront.</p>';
+    findEl.innerHTML = "";
+    fixEl.hidden = true;
+    scoreEl.textContent = "—";
+    scoreEl.classList.remove("done");
+    verdictEl.textContent = "AWAITING RUN";
+    verdictEl.classList.remove("bad");
+    progEl.textContent = "0 / " + TOTAL + " checks";
+    runBtn.disabled = false;
+    skipBtn.disabled = true;
+    resetBtn.disabled = true;
+  }
+
+  runBtn.addEventListener("click", run);
+  skipBtn.addEventListener("click", skip);
+  resetBtn.addEventListener("click", reset);
 })();
 </script>
