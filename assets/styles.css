@@ -446,6 +446,31 @@ main { counter-reset: sec; }
   .demo-phone { max-width: 300px; margin-inline: auto; }
 }
 
+/* Landscape capture of a live site, framed like the phone demo. */
+.site-shot {
+  margin: 1.75rem 0 0;
+  border: var(--bw) solid var(--line);
+  box-shadow: 6px 6px 0 var(--shadow);
+  background: var(--card);
+  line-height: 0;
+}
+.site-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1440 / 900;
+  object-fit: cover;
+}
+.site-shot figcaption {
+  line-height: 1.4;
+  padding: 0.5rem 0.65rem;
+  border-top: 2px solid var(--line);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
 .facts {
   list-style: none; margin: 1.75rem 0; padding: 0;
   border: var(--bw) solid var(--line);
