@@ -103,7 +103,7 @@ Three moves:
 1. **Scan.** A headless agent runs the full journey against the merchant's sandbox:
    discovery, the eight-way signature challenge, checkout session, delegated-token
    authorisation, mandate-scope negative tests, idempotency, refund, dispute evidence.
-2. **Certify.** ~120 checks across five pillars produce a **GreenLane Score (0–1000)** and
+2. **Certify.** 120 checks across five pillars produce a **GreenLane Score (0–1000)** and
    a tier. Deterministic, versioned, evidence-backed, appealable. A **90-day W3C
    Verifiable Credential** is issued, published to a public registry, and revoked within
    minutes if a weekly re-run regresses.

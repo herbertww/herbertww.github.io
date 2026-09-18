@@ -90,7 +90,10 @@ Every run gets an **ephemeral, single-use ECS Fargate task**:
 
 - fresh container, destroyed at run end, no reuse across tenants;
 - egress only through a dedicated NAT gateway with a **published, static EIP pool**, so
-  merchants can allowlist us — and so our traffic is attributable;
+  merchants can allowlist us — and so our traffic is attributable. *(This is also the
+  weakest point in the trust model: a published prober address is a reliable way to tell
+  the certifier apart from a real agent. See `TRUST-MODEL.md` §3 for the multi-perspective
+  fix and the proposed P2.27 divergence check.)*;
 - no IAM role beyond "write to this run's evidence prefix"; merchant sandbox credentials
   are injected as a short-lived, single-run scoped token from Secrets Manager and never
   written to disk;
