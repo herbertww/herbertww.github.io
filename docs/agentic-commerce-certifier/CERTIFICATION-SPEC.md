@@ -311,6 +311,9 @@ retired its code is never reused. This is the format the risk-signal API returns
 
 ## 4. Pillar detail
 
+Which environment each pillar is certified in — production for most of them, test mode for
+the money leg — is §5.2. It is part of the check's meaning, not an operational footnote.
+
 ### 4.1 — P1 Discoverability (15%, 20 checks, Σ W = 57)
 
 | ID | Check | Authority | Type | W |
@@ -495,7 +498,170 @@ fired.
 
 ---
 
-## 5. The credential
+## 5. Environments, evidence grades and continuity
+
+Three questions decide what a certificate is actually worth, and v1.0 as drafted answered
+none of them: **which environment was each check observed in, what happens to a merchant
+with no test environment, and what happens after issuance when the shop's code changes.**
+
+### 5.1 Evidence grades
+
+Grades E0–E4 are defined in the companion *GreenLane Liability Chain* draft and are adopted
+here unchanged, because the rubric needs them to state what a result is worth:
+
+| Grade | What it is | Weight when a transaction is contested |
+|---|---|---|
+| `E0` | Attested — a signed merchant questionnaire response | None against the merchant's own interest |
+| `E1` | Passively observed — fetched public surface, HAR, screenshot | A public state at a time; rebuttable by any later deploy |
+| `E2` | Actively observed — a signed request/response pair | The merchant responded a specific way to an attributable request |
+| `E3` | Adversarially observed — a request that *should* be refused, and the refusal | **The load-bearing grade.** The controls discriminate rather than accept |
+| `E4` | Sealed — E1–E3 hashed into a Merkle root, WORM storage, digest in the credential | The only form in which any of the above survives an appeal |
+
+Two rules carry over and are binding on scoring: **no attested (`E0`) fact may raise a
+tier**, and a claim is asserted only at the strength of the weakest evidence under it.
+
+### 5.2 The environment qualifier
+
+A grade alone is not enough, because the same adversarial test proves different things in
+different places. Every result therefore carries an environment qualifier — `E3@prod`,
+`E3@test`, `E0@attested` — and the rubric states which qualifiers are acceptable per pillar.
+
+| Pillar | Required environment | Why | Safe in production? |
+|---|---|---|---|
+| P1 | **Production, mandatory** | The agent-facing public surface *is* the subject | Yes, read-only |
+| P2 | **Production, mandatory** | The subject is the live WAF, bot management and CDN. A staging edge is a different box, usually with protection off or in monitor mode | Yes — a refused signed request costs nothing |
+| P3 | **Production up to authorisation**; test mode for the order-creating checks | Session creation, totals, discounts, price-change and expiry are all observable without paying for anything | Mostly — see §5.3 |
+| P4 | **Test mode, mandatory** | Authorisation is the one irreversible act | No |
+| P5 | Environment-agnostic | Attestation plus sampled verification against whichever system holds the records | n/a |
+
+**The production-first rule.** Four of the five pillars are certified against the live shop,
+not a sandbox. Only the money leg requires test mode. This is not a convenience: a P2
+result obtained in staging is close to worthless, because the thing under test is the live
+edge configuration, and `E3@test` is therefore **not an acceptable qualifier for any P2
+check**. It also removes the sandbox-fidelity problem from 88 of the 120 checks, since there
+is no sandbox in the path to diverge from production.
+
+### 5.3 Where production probing stops
+
+The irreversible act is authorisation, so that is the line. Consequences:
+
+- **Order-creating P3 checks run in test mode**, not production: P3.05 (idempotency across
+  a real order), P3.22, P3.23 and P3.24. They ride with L3.
+- **P3.06 never runs in production.** Racing two sessions onto the last unit of inventory is
+  destructive by construction; it is test-mode-only and `N/A`-eligible.
+- **Production sessions must be cancelled, not abandoned.** Probing creates real checkout
+  sessions that may hold real inventory, so the run cancels each one — which P3.21 already
+  tests — and the per-domain rate lease applies.
+
+### 5.4 A merchant with no test environment
+
+First, the common case is smaller than it sounds: **test mode is supplied by the payment
+processor, not built by the merchant.** Stripe, Adyen, Braintree and Shopify Payments all
+ship it, so a merchant with no engineering staging environment usually still has a money-leg
+test path. The PSP partnership is the route to it, which is what `BUSINESS-CASE.md` already
+concludes for its own reasons.
+
+Where it genuinely does not exist, there are three paths and they do not grade equally:
+
+| Path | What happens | Grade | Tier consequence |
+|---|---|---|---|
+| **A — PSP test mode** | The default. Money leg runs as designed | `E3@test` | None |
+| **B — Live-mode probe** | Real authorisation at a small amount on a merchant-funded instrument, refunded immediately | `E3@prod` | None — **but see the warning below** |
+| **C — Attestation only** | The merchant declares its behaviour; nothing is observed | `E0@attested` | Money leg **Not Established**; capped at Bronze |
+
+> **Path B is not authorised and must not be built on this document.** It deliberately
+> removes the control that `ARCHITECTURE.md` §4.3 and §11 describe as never reversible, and
+> it reopens two settled positions at once: the PCI DSS scope argument, and the argument
+> that GreenLane needs no PS Act licence because it moves no real money. The per-transaction
+> cost is trivial — a few dollars of unrefunded processing fees per cycle, so the founder's
+> cost instinct is correct — but cost is not what makes it hard. It needs the founder and
+> probably counsel, and it belongs in the Certification Practice Statement, not here.
+
+### 5.5 Not Established — a fourth result state
+
+Path C exposes a gap in §3. A check that could not be executed is not the same as a check
+that failed, and it is not the same as one declared inapplicable:
+
+| State | Scored? | Meaning | Tier effect |
+|---|---|---|---|
+| Pass / Partial / Fail | Yes | Observed | Per §3.5 |
+| `N/A` | Excluded | Declared inapplicable **and verified** as such (§3.4) | None |
+| **`NE` Not Established** | Excluded | The required environment or access was unavailable. Nothing is asserted either way | **Any Hard check `NE` caps the certificate at Bronze** |
+
+`NE` is honest rather than punitive: "we did not see it work" is a different statement from
+"we saw it fail", and a merchant should not be branded with a failure it never had. But it
+cannot buy a tier either, so a credential with any P4 Hard check unestablished carries
+`moneyLegEstablished: false` on its face. Bronze already means "agent-discoverable and
+transactable with human confirmation," which is exactly what such a merchant has
+demonstrated.
+
+Unlike `N/A`, `NE` needs no declaration — it is recorded by the run when access is missing,
+and it is published in the credential so no reader has to infer it from a silence.
+
+### 5.6 Continuity after issuance
+
+A certificate that speaks only about its issuance date is worth very little, so cadence is
+part of the rubric rather than an operational detail. The bands follow the environment
+split, because the production-safe checks are the cheap ones:
+
+| Band | Checks | Environment | Cadence | Marginal cost |
+|---|---|---|---|---|
+| **Continuous** | P1 + P2 (46 checks) | Production | Daily | ~S$0.05 |
+| **Journey** | P3 production-safe (21 checks) | Production | Weekly | ~S$0.20 |
+| **Money leg** | P3 order-creating + destructive + P4 (37 checks) | Test mode | Per cycle, and on fingerprint change | ~S$0.70 |
+| **Governance** | P5 (16 checks) | Agnostic | Per cycle | ~S$0.02 |
+
+46 + 21 + 37 + 16 = 120.
+
+**Verification mode** is published in the credential and is a materially different assertion:
+
+- `continuous` — the merchant has the CI hook installed, so a deploy triggers re-verification
+  before or immediately after it goes live.
+- `periodic` — clock-driven only.
+
+### 5.7 When the shop's code changes
+
+This is the structural weakness of certifying behaviour rather than identity, and
+`TRUST-MODEL.md` §5 sets out the mechanism: an **integration fingerprint** over the things
+whose change plausibly changes agentic behaviour — declared protocol versions, the endpoint
+set, the manifest hash, the PSP identifier, the observed edge vendor, the TLS configuration
+— and a third credential state between valid and revoked.
+
+| State | Means | Trigger |
+|---|---|---|
+| **Valid** | Behaviour observed, within its window | Successful run |
+| **Stale** | The integration changed; the last result no longer describes what is deployed | Fingerprint mismatch |
+| **Revoked** | Behaviour regressed against the rubric | Failed re-verification |
+
+Staleness is not a finding against the merchant — deploying is not misconduct — so it is
+never published as revocation. It queues a re-run and asks consumers to treat the tier as
+one band lower until it clears.
+
+Detection has three routes, in descending strength: the **CI hook** catches a change at
+deploy time, before or as it goes live; the **daily production probe** recomputes the
+fingerprint, so an unhooked merchant is caught within 24 hours; **platform webhooks** catch
+theme and app changes on Shopify and similar.
+
+**The irreducible gap, stated plainly.** For P1 and P2 the worst-case exposure is 24 hours
+on `periodic` and minutes on `continuous`. For the money leg it is up to a full 90-day
+cycle, because a PSP or WAF configuration change can regress mandate enforcement without
+altering anything the daily probe can observe. The fingerprint narrows that window; it
+cannot close it.
+
+Two things follow, and the second is a business consequence rather than a technical one:
+
+1. Every interface states `lastVerified`, `verificationMode` and the fingerprint's
+   freshness, so a relying party can weigh the tier by its staleness instead of reading it
+   as a present-tense claim.
+2. **`continuous` mode is what makes a 90-day money-leg claim defensible at all**, which
+   means the CI gate is a trust mechanism and not an upsell. `ARCHITECTURE.md` §7 currently
+   frames it as "the habit-former" and the pricing in `BUSINESS-CASE.md` §3.1 treats it as a
+   mid-market feature. That is backwards: `continuous` should be the default a certificate
+   assumes, with `periodic` sold at a discount and disclosed as the weaker instrument.
+
+---
+
+## 6. The credential
 
 A W3C Verifiable Credential 2.0, Ed25519, issuer `did:web:greenlane.sg`:
 
@@ -517,7 +683,11 @@ A W3C Verifiable Credential 2.0, Ed25519, issuer `did:web:greenlane.sg`:
     "pillars": { "P1": 902, "P2": 870, "P3": 915, "P4": 861, "P5": 840 },
     "protocols": ["ucp/2026-01", "acp/2026-04-17", "ap2/0.9", "tap/1.0"],
     "integrationFingerprint": "sha256:7c41…",
+    "fingerprintState": "valid",
+    "verificationMode": "continuous",
+    "moneyLegEstablished": true,
     "scopeExclusions": ["P4.14"],
+    "notEstablished": [],
     "openFindings": [],
     "evidenceDigest": "sha256:9f2b…",
     "lastVerified": "2026-08-29T02:11:04Z"
@@ -530,8 +700,13 @@ Properties that matter:
 - **The tier is shown with its derivation.** `scoreTier` and `ceiling` are both published
   alongside `tier`, because a reader who sees Silver deserves to know whether that is a
   scoring outcome or a Hard-check ceiling (§3.5). They are different risks.
-- **`scopeExclusions` lists what was declared inapplicable** (§3.4). A credential that
-  hides its exclusions overstates its coverage.
+- **`scopeExclusions` lists what was declared inapplicable** (§3.4), and
+  `notEstablished` lists what could not be observed at all (§5.5). A credential that hides
+  either overstates its coverage, and `moneyLegEstablished: false` says the loudest version
+  of it in one field.
+- **`verificationMode` and `fingerprintState` are read together with `lastVerified`**
+  (§5.6, §5.7). `periodic` plus a stale fingerprint is a materially weaker instrument than
+  `continuous` plus a fresh one, and a consumer that reads only `tier` has misread it.
 - **`integrationFingerprint` binds the credential to the integration, not just the
   domain.** See TRUST-MODEL §5 — a deploy can change agentic behaviour without changing
   the domain, which is the one way this differs structurally from a TLS certificate.
@@ -545,7 +720,7 @@ Properties that matter:
 
 ---
 
-## 6. Rubric governance
+## 7. Rubric governance
 
 - Spec repos (UCP, ACP, AP2, TAP, Web Bot Auth) are watched by CI. A published spec diff
   opens a rubric-change PR automatically with the affected check IDs listed.

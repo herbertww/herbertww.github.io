@@ -9,15 +9,22 @@ is worth taking seriously rather than gesturing at. Taken seriously, it produces
 problems that the rubric and the architecture do not currently solve, and one structural
 difference from TLS that changes the product.
 
-**Scope note.** A companion artifact, *GreenLane Liability Chain*
-(`https://claude.ai/artifact/YAhYw7SojixrtNi8JfVYgm`), covers the liability layer — what
-the certificate actually claims, evidence grades, and who is answerable when a certified
-merchant fails. This document is deliberately the other half: the **mechanics** of trust,
-being establishment, scoping, validation integrity and revocation. Where the two touch,
-that artifact governs the liability reading and this document governs the mechanism. It
-was unreadable at the time of writing (the artifact service returned 503), so the split
-above is asserted from its summary rather than from its text, and the two should be
-reconciled before either is treated as settled.
+**Scope note.** A companion draft, *GreenLane Liability Chain*
+(`https://claude.ai/artifact/YAhYw7SojixrtNi8JfVYgm`), covers the liability layer: the seven
+scoped claims C1–C7, evidence grades E0–E4, the per-check liability map, the certifier's own
+exposure, and the recommendation that GreenLane needs a Certification Practice Statement.
+This document is the other half — the **mechanics** of trust: establishment, scoping,
+validation integrity, revocation and continuity. Where the two touch, that draft governs the
+liability reading and this one governs the mechanism.
+
+The two were written independently and have since been reconciled. What that draft covers and
+this one defers to: the claims model, the evidence grades (adopted verbatim into SPEC §5.1),
+the liability map, and the CPS. What this document adds and that draft does not have: the
+root-program **strategy** in §2, multi-perspective validation and the prober-divergence
+problem in §3, the transparency-log analogue in §4, and the integration fingerprint and
+stale state in §5. Where they overlap — the missing root, and the interval between a
+regression and its detection — they agree, which is some evidence the reading is right
+rather than merely consistent. Both remain drafts for founder review.
 
 ---
 
@@ -26,14 +33,14 @@ reconciled before either is treated as settled.
 | TLS / WebPKI | GreenLane | Status |
 |---|---|---|
 | Certificate Authority | GreenLane as certifier | Built |
-| Certificate | W3C VC 2.0, Ed25519, `did:web` | Built (SPEC §5) |
+| Certificate | W3C VC 2.0, Ed25519, `did:web` | Built (SPEC §6) |
 | Key ceremony, HSM-held issuing key | KMS FIPS 140-2 L3 | Built (ARCHITECTURE §3) |
 | Domain Validation | DNS TXT domain-ownership proof | Built (ARCHITECTURE §8) |
 | DV / OV / EV assurance levels | Bronze / Silver / Gold tiers | Built (SPEC §3.5) |
 | CA/Browser Forum Baseline Requirements | The published rubric | Built (SPEC) |
-| CRL and OCSP | StatusList2021 + registry endpoint | Built (SPEC §5) |
-| OCSP stapling | Merchant-hosted `/.well-known/greenlane-pass.json` | Built (SPEC §5) |
-| Short-lived certificates | 90-day life, weekly re-verification | Built (SPEC §5) |
+| CRL and OCSP | StatusList2021 + registry endpoint | Built (SPEC §6) |
+| OCSP stapling | Merchant-hosted `/.well-known/greenlane-pass.json` | Built (SPEC §6) |
+| Short-lived certificates | 90-day life, weekly re-verification | Built (SPEC §6, §5.6) |
 | **Root programs** (who decides a CA is trusted) | **Nothing. No equivalent exists.** | §2 |
 | **Multi-perspective validation** (anti-hijack) | **Nothing — and the architecture works against it** | §3 |
 | **Certificate Transparency logs** | **Nothing** | §4 |
@@ -133,7 +140,7 @@ a second vantage point the merchant cannot identify:
 
 Proposed as **P2.27 — "Observed behaviour does not depend on the origin network of a
 verified agent"**, Hard, W 5, authority `GreenLane`, reason code
-`GL-P2-27-DIVERGENCE`. It is proposed for **v1.1, not slipped into v1.0**: SPEC §6 requires
+`GL-P2-27-DIVERGENCE`. It is proposed for **v1.1, not slipped into v1.0**: SPEC §7 requires
 60 days' notice and one advisory cycle for a new scored check, and a rule the certifier
 exempts itself from is not a rule. Which checks belong in the corroborating subset is an
 engineering decision — the identity and money-leg checks are the obvious candidates, and
@@ -149,7 +156,7 @@ Two mechanisms make the WebPKI survivable when a CA is wrong, and GreenLane has 
 parties can detect misissuance the CA has not disclosed. The GreenLane equivalent is cheap
 and should ship with the first certificate: an **append-only public log of every issuance,
 re-verification and revocation** — domain, rubric version, score, tier, evidence digest,
-timestamp. Not the evidence, which is commercially confidential (SPEC §6), only the fact and
+timestamp. Not the evidence, which is commercially confidential (SPEC §7), only the fact and
 the digest. This is what lets a network audit GreenLane's issuance history without trusting
 GreenLane's word for it, and it is a precondition for any root program admitting it.
 
@@ -168,7 +175,7 @@ be an audit *of*.
 that then fails in the field. The WebPKI's answer is a published disclosure timeline,
 mandatory revocation windows and a public incident report. The minimum here: a stated
 window for revoking on discovery, a public incident entry in the transparency log, and a
-rubric-change PR when the root cause is a missing check. The appeals path in SPEC §6 handles
+rubric-change PR when the root cause is a missing check. The appeals path in SPEC §7 handles
 the merchant disputing GreenLane; none of it handles GreenLane being wrong in the
 merchant's favour, which is the failure that costs a root program its confidence.
 
@@ -190,9 +197,9 @@ gap is to bind the certificate to the integration as well as the name.
 **Integration fingerprint.** A digest over the things whose change plausibly changes agentic
 behaviour: declared protocol versions, the set of declared endpoints, the manifest hash, the
 PSP identifier, the observed edge/WAF vendor, and the TLS configuration. It is published in
-the credential (SPEC §5) so any consumer can compare it to what it observes.
+the credential (SPEC §6) so any consumer can compare it to what it observes.
 
-That produces a third credential state, which the spec does not currently have:
+That produces a third credential state, now carried in SPEC §5.7:
 
 | State | Means | Trigger |
 |---|---|---|
@@ -204,6 +211,10 @@ Staleness is not revocation and must not be published as one — the merchant ha
 wrong by deploying. It is a request for re-verification, and it is the honest state for a
 credential whose subject just changed underneath it. An agent reading a stale pass should
 treat it as a lower tier rather than as an absence.
+
+Cadence, change detection and the size of the undetected-regression window are specified
+in SPEC §5.6 and §5.7, since they determine what each check's result means rather than only
+how the platform is operated.
 
 **Scoping rules.** Agentic behaviour is per-origin, because the WAF rule, the checkout
 endpoint and the PSP configuration are per-origin. So:
@@ -250,10 +261,18 @@ Ordered by how much depends on them:
 2. **Whether the corroborating run ships in v1.1** (§3), and which checks it samples. Until
    it does, every certificate carries an unstated assumption that the merchant is not
    special-casing the prober.
-3. **The Certification Practice Statement** (§4), which is also where the liability wording
-   and the evidence standard live. Reconcile with the Liability Chain artifact.
-4. **The transparency log** (§4) — cheap, and hard to retrofit credibly once there is an
+3. **The Certification Practice Statement** (§4). The Liability Chain draft reaches the same
+   conclusion from the liability side and calls it the single largest gap in the model; the
+   mechanism side reaches it because without a CPS there is nothing for an audit to be an
+   audit *of*. It is one document, and both halves are waiting on it.
+4. **Whether a live-mode money-leg probe is ever permitted** (SPEC §5.4, Path B), for
+   merchants with no PSP test mode. The cost objection is weak — a few dollars of
+   unrefunded processing fees per cycle — but it reopens the PCI scope position and the
+   no-licence position simultaneously, so it is a founder-and-counsel decision, not an
+   engineering one. Until it is made, those merchants cap at Bronze with
+   `moneyLegEstablished: false`, which is at least honest.
+5. **The transparency log** (§4) — cheap, and hard to retrofit credibly once there is an
    issuance history that predates it.
-5. **The integration fingerprint's inputs** (§5), which determine how often a credential
+6. **The integration fingerprint's inputs** (§5), which determine how often a credential
    goes stale. Too broad and every deploy triggers re-verification; too narrow and it misses
    the WAF change that matters.

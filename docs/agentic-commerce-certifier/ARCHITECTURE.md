@@ -110,14 +110,20 @@ construction, which is also how we test P2.
 | Layer | Runs | Privilege | Duration |
 |---|---|---|---|
 | **L0 Passive** | Public surface: DNS, TLS, `robots.txt`, `llms.txt`, `/.well-known/ucp`, feeds, sitemap, schema.org on a sampled PDP set | None. Respects `robots.txt`. Available free, no consent needed | ~30s |
-| **L1 Protocol conformance** | Schema validation against pinned UCP/ACP/AP2 versions; capability negotiation; the 8-way signature challenge matrix; error taxonomy | Requires **verified domain ownership** (DNS TXT) — it is an active probe | ~2 min |
-| **L2 Agent journey** | Claude-driven Playwright/MCP agent: discovery → PDP → cart → checkout session → totals parity across feed/PDP/session | Merchant contract + sandbox or test-mode flag | 5–15 min |
+| **L1 Protocol conformance** | Schema validation against pinned UCP/ACP/AP2 versions; capability negotiation; the 8-way signature challenge matrix; error taxonomy. **Production only** — the subject is the live edge, so a staging result is worthless (SPEC §5.2) | Requires **verified domain ownership** (DNS TXT) — it is an active probe | ~2 min |
+| **L2 Agent journey** | Claude-driven Playwright/MCP agent: discovery → PDP → cart → checkout session → totals parity across feed/PDP/session. **Production up to the authorisation boundary**; sessions are cancelled, not abandoned (SPEC §5.3) | Merchant contract; test mode only for the order-creating checks | 5–15 min |
 | **L3 Money leg** | Test-mode authorisation with delegated/agentic tokens; mandate-scope negative tests; idempotency and double-charge probes; refund; dispute-evidence retrieval | Merchant contract + PSP sandbox credentials, explicit written scope | 10–25 min |
 | **L4 Governance** | Audit-envelope shape vs MAS SAFR; consent retention; PDPA handling; residency attestation | Merchant-supplied API or attestation with sampled verification | ~3 min |
 
 L0 is the free product and the entire top of funnel. L3 is the paid product and the moat:
 it needs a contract, a sandbox and a PSP relationship, which is exactly why free scanners
 stop at L0/L1.
+
+**Environment split.** L0 through L2 run against production, because for discoverability and
+agent admission the live shop *is* the subject and a sandbox result would not mean anything.
+Only the money leg requires test mode. See `CERTIFICATION-SPEC.md` §5.2 for the per-pillar
+rule, §5.4 for merchants with no test mode, and §5.6 for the re-verification cadence each
+band runs on.
 
 ### 4.3 Safety rails on the money leg
 

@@ -43,7 +43,7 @@ whether the *money* completes.
 | Document | What it covers |
 |---|---|
 | [`CERTIFICATION-SPEC.md`](./CERTIFICATION-SPEC.md) | The rubric — 5 pillars, 120 checks, the 0–1000 GreenLane Score, weights, partial credit, tiering and hard-fail ceilings. This is the product IP. |
-| [`TRUST-MODEL.md`](./TRUST-MODEL.md) | Why anyone should believe the certificate. The TLS/WebPKI mapping, the missing root program, validation integrity, transparency, and what the certificate actually binds. |
+| [`TRUST-MODEL.md`](./TRUST-MODEL.md) | Why anyone should believe the certificate. The TLS/WebPKI mapping, the missing root program, validation integrity, transparency, and what the certificate actually binds. Reconciled with the *GreenLane Liability Chain* draft, which covers the liability half. |
 | [`ARCHITECTURE.md`](./ARCHITECTURE.md) | Technical architecture, tech stack, deployment topology, security/compliance posture, cost model, build plan. |
 | [`BUSINESS-CASE.md`](./BUSINESS-CASE.md) | Findings, idea, business model, unit economics, feasibility, GTM, risks — the narrative behind the pitch deck. |
 | [`pitch-deck.html`](./pitch-deck.html) | The 10-minute deck, with a scripted demo run. Self-contained. |
@@ -66,5 +66,10 @@ the *money* completes.
 
 The rubric is complete and internally consistent: 120 checks, every one carrying an
 authority and an integer weight, partial credit written down per check, and a tier
-derivation that cannot contradict itself. Nothing is built. `TRUST-MODEL.md` §7 lists what
-has to be settled before a first certificate could honestly be issued.
+derivation that cannot contradict itself. Each check also states the environment it must be
+observed in — production for four of the five pillars, test mode only for the money leg —
+and what happens to a merchant who has no test environment.
+
+Nothing is built. `TRUST-MODEL.md` §7 lists the six things that have to be settled before a
+first certificate could honestly be issued, and a Certification Practice Statement is the
+largest of them.
