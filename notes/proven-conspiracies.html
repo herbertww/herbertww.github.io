@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Proven Conspiracies</title>
+<meta name="description" content="Conspiracies and cover-ups confirmed by congressional investigations, declassified records, court findings and official inquiries, with sources, plus the famous ones that were never proven." />
+<meta name="author" content="Herbert Eng" />
+<meta name="theme-color" content="#efece2" />
+<link rel="canonical" href="https://herbertww.github.io/notes/proven-conspiracies.html" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<style>
+:root { --bg: #efece2; --card: #fbfaf6; --ink: #16161a; --soft: #4a4a52; --line: #16161a; --accent: #1c1cf0; --tag: #ffe000; --tag-ink: #16161a; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #100f0e; --card: #1a1918; --ink: #f4f1e8; --soft: #c2bdb2; --line: #f4f1e8; --accent: #8c8cff; --tag: #ffe94d; --tag-ink: #100f0e; }
+}
+:root[data-theme="dark"] { --bg: #100f0e; --card: #1a1918; --ink: #f4f1e8; --soft: #c2bdb2; --line: #f4f1e8; --accent: #8c8cff; --tag: #ffe94d; --tag-ink: #100f0e; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 18px/1.65 'Space Grotesk', system-ui, sans-serif; }
+.top { display: flex; justify-content: space-between; gap: 16px; padding: 18px 16px; border-bottom: 2px solid var(--line); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: 13px; }
+.top a { color: var(--ink); text-decoration: none; }
+main { max-width: 800px; margin: 0 auto; padding: 40px 16px 80px; }
+h1 { font: 400 clamp(34px, 7vw, 54px)/1.05 'Archivo Black', 'Space Grotesk', sans-serif; margin: 10px 0 20px; letter-spacing: -.01em; }
+h2 { font: 400 clamp(24px, 4.5vw, 32px)/1.15 'Archivo Black', 'Space Grotesk', sans-serif; margin: 64px 0 8px; padding-top: 18px; border-top: 4px solid var(--line); }
+h3 { font: 700 21px/1.3 'Space Grotesk', sans-serif; margin: 0 0 6px; }
+a { color: var(--accent); overflow-wrap: anywhere; }
+.lede { font-size: 20px; }
+.meta { color: var(--soft); font-size: 15px; }
+.case { background: var(--card); border: 2px solid var(--line); padding: 18px 18px 8px; margin: 22px 0; }
+.case p { margin: 8px 0; }
+.case dl { margin: 10px 0; display: grid; grid-template-columns: 9.5em 1fr; gap: 6px 14px; }
+.case dt { font-weight: 700; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; padding-top: 3px; }
+.case dd { margin: 0; }
+@media (max-width: 560px) { .case dl { grid-template-columns: 1fr; } .case dd { margin-bottom: 8px; } }
+.tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: var(--tag); color: var(--tag-ink); padding: 2px 8px; margin: 0 6px 6px 0; border: 2px solid var(--line); }
+.src { font-size: 15px; color: var(--soft); }
+.toc { columns: 2 240px; padding-left: 1.2em; }
+.toc li { break-inside: avoid; margin: 4px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 16px; }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+.tablewrap { overflow-x: auto; }
+blockquote { margin: 22px 0; padding: 4px 0 4px 18px; border-left: 6px solid var(--accent); }
+</style>
+</head>
+<body>
+<header class="top"><a href="../">Herbert Eng</a><span>Notes</span></header>
+<main>
+
+<h1>Conspiracies That Turned Out to Be True</h1>
+<p class="lede">Secret plans by governments, agencies and companies that were denied or unknown at the time and later confirmed by congressional investigation, declassified records, court findings, guilty pleas or official public inquiries.</p>
+<p class="meta">Compiled October 2026. Each entry cites the document that settled it. Wikipedia links are included as readable overviews; the primary source is listed first where one is online.</p>
+
+<h2 id="method">The bar for inclusion</h2>
+<p>A case is listed only if at least one of these confirmed the core of it:</p>
+<ul>
+<li><strong>Congress:</strong> a committee report or sworn hearing record (the Church Committee, the Senate Intelligence Committee, the Iran-Contra committees and others).</li>
+<li><strong>Declassification:</strong> the agency's own records, released under FOIA, the JFK Records Act, the Nazi War Crimes Disclosure Act or a voluntary release.</li>
+<li><strong>Courts:</strong> a conviction, guilty plea or judicial finding of fact.</li>
+<li><strong>Official inquiry:</strong> a presidential advisory committee, inspector general, royal commission or statutory public inquiry.</li>
+<li><strong>Internal documents:</strong> the organization's own papers, published in peer-reviewed analysis or produced in litigation.</li>
+</ul>
+<p>Each entry separates <em>what was proven</em> from <em>what is still disputed</em>, because the confirmed version is often narrower or different from the rumor that came before it. The final section lists famous theories that did <em>not</em> clear this bar.</p>
+
+<nav aria-label="Contents">
+<ol class="toc">
+<li><a href="#intel">US intelligence and covert action</a></li>
+<li><a href="#surveillance">Surveillance of citizens</a></li>
+<li><a href="#human">Experiments on people</a></li>
+<li><a href="#war">Pretexts for war</a></li>
+<li><a href="#political">Political conspiracies</a></li>
+<li><a href="#corporate">Corporate cover-ups</a></li>
+<li><a href="#intl">Outside the United States</a></li>
+<li><a href="#unproven">Famous theories that were not proven</a></li>
+<li><a href="#patterns">What the proven cases have in common</a></li>
+</ol>
+</nav>
+
+<!-- ============================================================ -->
+<h2 id="intel">1. US intelligence and covert action</h2>
+
+<div class="case" id="mkultra">
+<h3>MKUltra: CIA mind-control and drug experiments</h3>
+<span class="tag">Congress</span><span class="tag">Declassified</span>
+<dl>
+<dt>Years</dt><dd>1953–1973</dd>
+<dt>What was proven</dt><dd>The CIA, under Sidney Gottlieb, ran more than 150 subprojects on drugs, hypnosis and psychological manipulation at universities, hospitals and prisons, often on people who did not know or consent. Subjects were given LSD without their knowledge. In Operation Midnight Climax, CIA safehouses in San Francisco and New York had sex workers dose clients while agents watched. Army scientist Frank Olson died in 1953 days after being secretly dosed. In Montreal, Dr. Ewen Cameron's "psychic driving" work was CIA-funded (Subproject 68).</dd>
+<dt>How it came out</dt><dd>CIA Director Richard Helms ordered the files destroyed in 1973. About 20,000 pages of financial records survived in a misfiled archive and were released in 1977 after a FOIA request by John Marks. The Senate held a joint hearing on 3 August 1977.</dd>
+<dt>Still disputed</dt><dd>The full scope, because most operational records were destroyed.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.intelligence.senate.gov/wp-content/uploads/2024/08/sites-default-files-hearings-95mkultra.pdf">Senate hearing, "Project MKULTRA, the CIA's Program of Research in Behavioral Modification" (1977)</a> · <a href="https://en.wikipedia.org/wiki/Project_MKUltra">Wikipedia</a></p>
+</div>
+
+<div class="case" id="assassination">
+<h3>CIA plots to assassinate foreign leaders</h3>
+<span class="tag">Congress</span>
+<dl>
+<dt>Years</dt><dd>1960–1970</dd>
+<dt>What was proven</dt><dd>The CIA plotted to kill Fidel Castro at least eight times, including through Mafia figures Johnny Roselli, Sam Giancana and Santo Trafficante, and with poison pills. It prepared poison to kill Patrice Lumumba of Congo. It was involved to varying degrees with plotters against Trujillo (Dominican Republic), Diem (South Vietnam) and General René Schneider (Chile).</dd>
+<dt>How it came out</dt><dd>The Church Committee's 1975 interim report. President Ford then banned political assassination by executive order (EO 11905, 1976).</dd>
+<dt>Still disputed</dt><dd>The committee found no US hand in Lumumba's actual death, which was carried out by Congolese rivals with Belgian involvement, and no proof that a president personally ordered any plot.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.intelligence.senate.gov/wp-content/uploads/2024/08/sites-default-files-94465.pdf">Senate Report 94-465, "Alleged Assassination Plots Involving Foreign Leaders" (1975)</a> · <a href="https://en.wikipedia.org/wiki/Church_Committee">Wikipedia: Church Committee</a></p>
+</div>
+
+<div class="case" id="iran">
+<h3>The 1953 coup in Iran</h3>
+<span class="tag">Declassified</span>
+<dl>
+<dt>Years</dt><dd>1953</dd>
+<dt>What was proven</dt><dd>The CIA (Operation TPAJAX) and Britain's MI6 organized the overthrow of Iran's elected prime minister, Mohammad Mosaddegh, by paying for protests, propaganda and military support for the Shah.</dd>
+<dt>How it came out</dt><dd>Long reported, but officially denied until 2013, when a declassified internal CIA history stated the coup "was carried out under CIA direction as an act of U.S. foreign policy." The State Department published a retrospective <em>Foreign Relations of the United States</em> volume in 2017.</dd>
+</dl>
+<p class="src">Sources: <a href="https://nsarchive2.gwu.edu/NSAEBB/NSAEBB435/">National Security Archive, "CIA Confirms Role in 1953 Iran Coup"</a> · <a href="https://en.wikipedia.org/wiki/1953_Iranian_coup_d%27%C3%A9tat">Wikipedia</a></p>
+</div>
+
+<div class="case" id="guatemala">
+<h3>The 1954 coup in Guatemala</h3>
+<span class="tag">Declassified</span>
+<dl>
+<dt>Years</dt><dd>1952–1954</dd>
+<dt>What was proven</dt><dd>The CIA (Operation PBSUCCESS) armed, trained and directed the force that removed President Jacobo Árbenz, whose land reform had hit the United Fruit Company. Planning included lists of officials to be "eliminated" and a CIA training manual on assassination.</dd>
+<dt>How it came out</dt><dd>The CIA released about 1,400 pages in 1997, including <em>A Study of Assassination</em>.</dd>
+</dl>
+<p class="src">Sources: <a href="https://nsarchive2.gwu.edu/NSAEBB/NSAEBB4/">National Security Archive, "CIA and Assassinations: The Guatemala 1954 Documents"</a> · <a href="https://en.wikipedia.org/wiki/1954_Guatemalan_coup_d%27%C3%A9tat">Wikipedia</a></p>
+</div>
+
+<div class="case" id="chile">
+<h3>Covert action in Chile</h3>
+<span class="tag">Congress</span><span class="tag">Declassified</span>
+<dl>
+<dt>Years</dt><dd>1963–1973</dd>
+<dt>What was proven</dt><dd>The US spent about $8 million in covert funding against Salvador Allende between 1970 and 1973, after spending heavily against him in earlier elections. Under "Track II," ordered by Nixon in 1970, the CIA encouraged a military coup and backed plotters seeking to remove General René Schneider, who opposed one; Schneider was killed in a kidnapping attempt.</dd>
+<dt>How it came out</dt><dd>The Church Committee's staff report (1975). A 2000 CIA report to Congress (the Hinchey Report) added that the agency had paid $35,000 to members of a group involved in the Schneider kidnapping after his death.</dd>
+<dt>Still disputed</dt><dd>The committee found no evidence that the US directly carried out the 1973 coup that brought Pinochet to power, though it had worked to create the conditions for one.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.intelligence.senate.gov/wp-content/uploads/2024/08/sites-default-files-94chile.pdf">Church Committee, "Covert Action in Chile 1963–1973"</a></p>
+</div>
+
+<div class="case" id="media">
+<h3>The CIA's secret relationships with journalists</h3>
+<span class="tag">Congress</span><span class="tag">Declassified</span>
+<dl>
+<dt>Years</dt><dd>1950s–1970s</dd>
+<dt>What was proven</dt><dd>The Church Committee found about 50 American journalists or employees of US news organizations who were CIA assets, plus wider use of foreign media for propaganda. Carl Bernstein's 1977 reporting in <em>Rolling Stone</em> put the number of journalists who had carried out tasks for the CIA at more than 400. The CIA's "Family Jewels" file, released in 2007, confirms "Project Mockingbird," a 1963 wiretap of two Washington columnists.</dd>
+<dt>Still disputed</dt><dd>"Operation Mockingbird" as a single, centrally run program to control the US press is a later label; the records show many separate relationships rather than one named operation.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.intelligence.senate.gov/wp-content/uploads/2024/08/sites-default-files-94755-i.pdf">Church Committee Final Report, Book I (1976)</a> · <a href="https://nsarchive2.gwu.edu/NSAEBB/NSAEBB222/">National Security Archive, "The CIA's Family Jewels"</a> · <a href="https://en.wikipedia.org/wiki/Operation_Mockingbird">Wikipedia</a></p>
+</div>
+
+<div class="case" id="contra-drugs">
+<h3>Contra supply networks and drug trafficking</h3>
+<span class="tag">Congress</span><span class="tag">Inspector general</span>
+<dl>
+<dt>Years</dt><dd>1980s</dd>
+<dt>What was proven</dt><dd>The Senate's Kerry Committee (1989) found that people supporting the Nicaraguan Contras were involved in drug trafficking, that US agencies knew, and that the State Department paid companies run by traffickers to deliver humanitarian aid. A 1998 CIA Inspector General report (the Hitz report) confirmed the agency kept working with people it knew or suspected were traffickers.</dd>
+<dt>Still disputed</dt><dd>That the CIA deliberately caused the crack epidemic in American cities. Gary Webb's 1996 "Dark Alliance" series was widely attacked on that point, and no inquiry confirmed it.</dd>
+</dl>
+<p class="src">Sources: <a href="https://nsarchive2.gwu.edu/NSAEBB/NSAEBB2/">National Security Archive, "The Contras, Cocaine, and U.S. Covert Operations"</a> · <a href="https://en.wikipedia.org/wiki/Kerry_Committee_report">Wikipedia: Kerry Committee report</a></p>
+</div>
+
+<div class="case" id="paperclip">
+<h3>Operation Paperclip: hiding Nazi records</h3>
+<span class="tag">Declassified</span>
+<dl>
+<dt>Years</dt><dd>1945–1959</dd>
+<dt>What was proven</dt><dd>The US brought about 1,600 German scientists and engineers to work on rockets, aviation and chemical weapons. Truman's order barred active Nazis, so officials of the Joint Intelligence Objectives Agency rewrote security dossiers to remove or soften Nazi Party and SS records. Rocket engineer Arthur Rudolph left the US in 1984 rather than face proceedings over forced labor at the Mittelwerk factory.</dd>
+<dt>How it came out</dt><dd>Journalist Linda Hunt's 1985 investigation using FOIA, then the Nazi War Crimes Disclosure Act of 1998, under which more than eight million pages were declassified.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.archives.gov/iwg">National Archives, Nazi War Crimes and Japanese Imperial Government Records Interagency Working Group</a> · <a href="https://en.wikipedia.org/wiki/Operation_Paperclip">Wikipedia</a></p>
+</div>
+
+<div class="case" id="unit731">
+<h3>Immunity for Japan's Unit 731</h3>
+<span class="tag">Declassified</span>
+<dl>
+<dt>Years</dt><dd>1945–1948</dd>
+<dt>What was proven</dt><dd>The US granted immunity from war-crimes prosecution to Shiro Ishii and other leaders of Unit 731, which ran lethal human experiments and biological attacks in China, in exchange for their research data, and kept the deal out of the Tokyo trials.</dd>
+<dt>How it came out</dt><dd>Researchers found the records in US archives in the 1980s; more were released by the same interagency working group in 2007.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.archives.gov/iwg">National Archives IWG</a> · <a href="https://en.wikipedia.org/wiki/Unit_731">Wikipedia</a></p>
+</div>
+
+<div class="case" id="torture">
+<h3>CIA torture program and misleading oversight</h3>
+<span class="tag">Congress</span>
+<dl>
+<dt>Years</dt><dd>2002–2008</dd>
+<dt>What was proven</dt><dd>The Senate Intelligence Committee found that CIA "enhanced interrogation" was more brutal than the agency had described, that it did not produce the intelligence the CIA claimed, and that the CIA gave inaccurate information to the White House, the Justice Department and Congress. In 2005 the CIA destroyed 92 videotapes of interrogations. In 2014 CIA staff searched computers used by Senate investigators; the CIA's own inspector general confirmed it and Director John Brennan apologized.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.intelligence.senate.gov/sites/default/files/publications/CRPT-113srpt288.pdf">Senate Report 113-288, Committee Study of the CIA's Detention and Interrogation Program (executive summary, 2014)</a> · <a href="https://en.wikipedia.org/wiki/Senate_Intelligence_Committee_report_on_CIA_torture">Wikipedia</a></p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="surveillance">2. Surveillance of citizens</h2>
+
+<div class="case" id="cointelpro">
+<h3>COINTELPRO: the FBI's campaign against activists</h3>
+<span class="tag">Congress</span><span class="tag">Court</span>
+<dl>
+<dt>Years</dt><dd>1956–1971</dd>
+<dt>What was proven</dt><dd>The FBI ran covert programs to "expose, disrupt, misdirect, discredit, or otherwise neutralize" civil-rights groups, the New Left, Black nationalist groups, the Socialist Workers Party and others. Methods included forged letters, planted press stories, informants and efforts to get people fired. In 1964 the FBI mailed Martin Luther King Jr. an anonymous letter, with a surveillance recording, that he read as urging him to kill himself. In the 1969 raid that killed Black Panther leader Fred Hampton, an FBI informant had supplied the floor plan of his apartment; federal, county and city governments later paid $1.85 million to settle the survivors' lawsuit.</dd>
+<dt>How it came out</dt><dd>On 8 March 1971, activists broke into the FBI office in Media, Pennsylvania, and mailed the files to newspapers. The Church Committee documented the program in 1976.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.intelligence.senate.gov/wp-content/uploads/2024/08/sites-default-files-94755-iii.pdf">Church Committee Final Report, Book III (1976)</a> · <a href="https://en.wikipedia.org/wiki/COINTELPRO">Wikipedia: COINTELPRO</a> · <a href="https://en.wikipedia.org/wiki/Citizens%27_Commission_to_Investigate_the_FBI">Wikipedia: the Media break-in</a></p>
+</div>
+
+<div class="case" id="shamrock">
+<h3>SHAMROCK, MINARET and Operation CHAOS</h3>
+<span class="tag">Congress</span><span class="tag">Declassified</span>
+<dl>
+<dt>Years</dt><dd>1945–1975</dd>
+<dt>What was proven</dt><dd>Under Project SHAMROCK, RCA Global, ITT World Communications and Western Union gave the NSA copies of international telegrams for some 30 years without warrants. Under MINARET, the NSA kept watch lists of Americans, including Martin Luther King Jr., Muhammad Ali, journalist Art Buchwald and Senators Frank Church and Howard Baker. The CIA's Operation CHAOS spied on the antiwar movement inside the US, despite the agency's charter barring domestic operations.</dd>
+<dt>How it came out</dt><dd>Seymour Hersh's December 1974 <em>New York Times</em> report, the Rockefeller Commission and Church Committee (1975–76). The MINARET names were declassified in 2013.</dd>
+</dl>
+<p class="src">Sources: <a href="https://nsarchive2.gwu.edu/NSAEBB/NSAEBB441/">National Security Archive, "The NSA versus Martin Luther King, Muhammad Ali, Art Buchwald, Frank Church, et al."</a> · <a href="https://en.wikipedia.org/wiki/Project_SHAMROCK">Wikipedia: SHAMROCK</a> · <a href="https://en.wikipedia.org/wiki/Operation_CHAOS">Wikipedia: CHAOS</a></p>
+</div>
+
+<div class="case" id="nsa">
+<h3>NSA bulk collection of Americans' phone records</h3>
+<span class="tag">Court</span><span class="tag">Oversight board</span>
+<dl>
+<dt>Years</dt><dd>2001–2015</dd>
+<dt>What was proven</dt><dd>The NSA collected the call records of nearly every American under Section 215 of the Patriot Act. In March 2013, Director of National Intelligence James Clapper told the Senate the NSA did not "wittingly" collect "any type of data at all on millions or hundreds of millions of Americans." Three months later Edward Snowden's documents showed otherwise. The Privacy and Civil Liberties Oversight Board found no case where the program made a concrete difference in stopping an attack. The Second Circuit (<em>ACLU v. Clapper</em>, 2015) ruled the program went beyond what the law allowed, and the Ninth Circuit (<em>United States v. Moalin</em>, 2020) said it was likely unconstitutional.</dd>
+<dt>Outcome</dt><dd>The USA FREEDOM Act (2015) ended bulk collection by the NSA itself.</dd>
+</dl>
+<p class="src">Sources: <a href="https://documents.pclob.gov/prod/Documents/OversightReport/ec542143-1079-424a-84b3-acc354698560/215-Report_on_the_Telephone_Records_Program.pdf">PCLOB report on the Section 215 program (2014)</a> · <a href="https://cdn.ca9.uscourts.gov/datastore/opinions/2020/09/02/13-50572.pdf">US v. Moalin, 9th Cir. (2020)</a> · <a href="https://en.wikipedia.org/wiki/Global_surveillance_disclosures_(2013%E2%80%93present)">Wikipedia</a></p>
+</div>
+
+<div class="case" id="fisa">
+<h3>Errors and an altered email in the Carter Page warrants</h3>
+<span class="tag">Inspector general</span><span class="tag">Court</span>
+<dl>
+<dt>Years</dt><dd>2016–2017</dd>
+<dt>What was proven</dt><dd>The Justice Department Inspector General found 17 significant errors or omissions in the FBI's surveillance warrant applications for Trump campaign adviser Carter Page. FBI lawyer Kevin Clinesmith pleaded guilty in 2020 to altering an email used in a renewal application.</dd>
+<dt>Still disputed</dt><dd>The same Inspector General report found the overall investigation was opened with adequate cause and found no documentary evidence that political bias drove the decision to open it. The 2023 Durham report was more critical of the FBI but brought no further convictions.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.justice.gov/storage/120919-examination.pdf">DOJ Inspector General, Review of Four FISA Applications (2019)</a> · <a href="https://en.wikipedia.org/wiki/Crossfire_Hurricane_(FBI_investigation)">Wikipedia</a></p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="human">3. Experiments on people</h2>
+
+<div class="case" id="tuskegee">
+<h3>The Tuskegee syphilis study</h3>
+<span class="tag">Congress</span><span class="tag">Government admission</span>
+<dl>
+<dt>Years</dt><dd>1932–1972</dd>
+<dt>What was proven</dt><dd>The US Public Health Service followed about 600 Black men in Macon County, Alabama, 399 of them with syphilis, without telling them their diagnosis. It kept treating them as untreated subjects even after penicillin became the standard cure in the late 1940s, and steered them away from treatment elsewhere.</dd>
+<dt>How it came out</dt><dd>Whistleblower Peter Buxtun took it to the press; Jean Heller of the Associated Press broke the story in July 1972. Senate hearings followed in 1973, then a $10 million settlement and the National Research Act of 1974. President Clinton apologized in 1997.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.cdc.gov/tuskegee/about/index.html">CDC, "About the USPHS Syphilis Study"</a> · <a href="https://en.wikipedia.org/wiki/Tuskegee_Syphilis_Study">Wikipedia</a></p>
+</div>
+
+<div class="case" id="radiation">
+<h3>Human radiation experiments</h3>
+<span class="tag">Presidential committee</span><span class="tag">Declassified</span>
+<dl>
+<dt>Years</dt><dd>1944–1974</dd>
+<dt>What was proven</dt><dd>Eighteen hospital patients were injected with plutonium in 1945–47 without informed consent. Boys at the Fernald School in Massachusetts were fed radioactive tracers in their cereal. Thousands of other experiments, including deliberate releases of radiation over populated areas, were funded by the Atomic Energy Commission and the military. Under Project Sunshine, the AEC collected bone samples from dead people, including infants, in several countries, often without families' knowledge.</dd>
+<dt>How it came out</dt><dd>Rep. Edward Markey's 1986 House subcommittee report, Eileen Welsome's 1993 <em>Albuquerque Tribune</em> series naming the plutonium patients, and the Advisory Committee on Human Radiation Experiments' final report in 1995. President Clinton apologized the same year.</dd>
+</dl>
+<p class="src">Sources: <a href="https://ehss.energy.gov/ohre/roadmap/achre/report.html">Final Report of the Advisory Committee on Human Radiation Experiments (1995)</a> · <a href="https://en.wikipedia.org/wiki/Advisory_Committee_on_Human_Radiation_Experiments">Wikipedia</a> · <a href="https://en.wikipedia.org/wiki/Project_Sunshine">Wikipedia: Project Sunshine</a></p>
+</div>
+
+<div class="case" id="seaspray">
+<h3>Germ-warfare tests over American cities</h3>
+<span class="tag">Congress</span><span class="tag">Government admission</span>
+<dl>
+<dt>Years</dt><dd>1949–1969 (open-air tests); 1962–1973 (Project 112/SHAD)</dd>
+<dt>What was proven</dt><dd>In Operation Sea-Spray (1950), the Navy sprayed <em>Serratia marcescens</em> and other bacteria over San Francisco from a ship to see how a biological attack would spread. The Army told Congress in 1977 it had run 239 open-air tests with simulated agents, including in the New York subway and over St. Louis and Minneapolis. Under Project 112 and SHAD, about 6,000 service members were exposed to chemical and biological agents or simulants; the Defense Department denied this for decades before confirming it in 2000–2002.</dd>
+<dt>Still disputed</dt><dd>Health effects on civilians. A family's lawsuit over a San Francisco death in 1950 was unsuccessful.</dd>
+</dl>
+<p class="src">Sources: Senate Subcommittee on Health and Scientific Research, "Biological Testing Involving Human Subjects by the Department of Defense" (1977) · <a href="https://www.gao.gov/products/gao-04-410">GAO-04-410 on Project 112/SHAD (2004)</a> · <a href="https://en.wikipedia.org/wiki/Operation_Sea-Spray">Wikipedia: Sea-Spray</a> · <a href="https://en.wikipedia.org/wiki/Project_112">Wikipedia: Project 112</a></p>
+</div>
+
+<div class="case" id="alcohol">
+<h3>Poisoning industrial alcohol during Prohibition</h3>
+<span class="tag">Historical record</span>
+<dl>
+<dt>Years</dt><dd>1926–1933</dd>
+<dt>What was proven</dt><dd>Knowing bootleggers were stealing and redistilling industrial alcohol, the Treasury Department required manufacturers to add more lethal poisons, including up to 10% methanol. Deaths followed; one estimate puts the toll at 10,000 or more by the end of Prohibition. New York's chief medical examiner, Charles Norris, publicly accused the government of "legal murder."</dd>
+<dt>Note</dt><dd>The policy itself was not secret. What officials disputed at the time was that it was killing people.</dd>
+</dl>
+<p class="src">Sources: <a href="https://slate.com/technology/2010/02/the-little-told-story-of-how-the-u-s-government-poisoned-alcohol-during-prohibition.html">Deborah Blum, "The Chemist's War," Slate (2010)</a></p>
+</div>
+
+<div class="case" id="popeye">
+<h3>Weather modification in the Vietnam War</h3>
+<span class="tag">Congress</span><span class="tag">Declassified</span>
+<dl>
+<dt>Years</dt><dd>1967–1972</dd>
+<dt>What was proven</dt><dd>Operation Popeye seeded clouds over the Ho Chi Minh Trail to lengthen the monsoon and wash out supply routes. Officials denied weather warfare until columnist Jack Anderson reported it in 1971 and the Senate held hearings in 1974. The result was the 1977 ENMOD Convention banning hostile environmental modification.</dd>
+</dl>
+<p class="src">Sources: <a href="https://en.wikipedia.org/wiki/Operation_Popeye">Wikipedia</a></p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="war">4. Pretexts for war</h2>
+
+<div class="case" id="tonkin">
+<h3>The Gulf of Tonkin incident</h3>
+<span class="tag">Declassified</span><span class="tag">Congress</span>
+<dl>
+<dt>Years</dt><dd>1964</dd>
+<dt>What was proven</dt><dd>The second reported North Vietnamese attack on US destroyers, on 4 August 1964, did not happen. Congress passed the Gulf of Tonkin Resolution on 7 August, authorizing the escalation of the Vietnam War. A classified NSA study by historian Robert Hanyok, released in 2005, concluded that signals intelligence had been presented in a way that made it look like an attack had taken place, while intercepts that pointed the other way were left out.</dd>
+<dt>Still disputed</dt><dd>Hanyok found no proof of a top-down plot; whether senior officials knowingly lied or acted on bad reporting they wanted to believe is still argued. The 2 August attack was real.</dd>
+</dl>
+<p class="src">Sources: <a href="https://nsarchive2.gwu.edu/NSAEBB/NSAEBB132/">National Security Archive, "The Gulf of Tonkin Incident, 40 Years Later"</a> · <a href="https://en.wikipedia.org/wiki/Gulf_of_Tonkin_incident">Wikipedia</a></p>
+</div>
+
+<div class="case" id="northwoods">
+<h3>Operation Northwoods</h3>
+<span class="tag">Declassified</span>
+<dl>
+<dt>Years</dt><dd>1962</dd>
+<dt>What was proven</dt><dd>The Joint Chiefs of Staff, in a memo signed by Chairman Lyman Lemnitzer, proposed staging attacks to justify invading Cuba: blowing up a US ship at Guantánamo, a "Communist Cuban terror campaign" in Miami and Washington, and faking the shoot-down of a civilian airliner. President Kennedy's administration rejected it.</dd>
+<dt>How it came out</dt><dd>Released in 1997 by the Assassination Records Review Board under the JFK Records Act.</dd>
+<dt>Note</dt><dd>This is a proven <em>plan</em>, not a carried-out operation. Its significance is that the top of the US military put false-flag attacks on Americans in writing.</dd>
+</dl>
+<p class="src">Sources: <a href="https://nsarchive2.gwu.edu/news/20010430/northwoods.pdf">The Northwoods memorandum (PDF via National Security Archive)</a> · <a href="https://en.wikipedia.org/wiki/Operation_Northwoods">Wikipedia</a></p>
+</div>
+
+<div class="case" id="nayirah">
+<h3>The Nayirah testimony</h3>
+<span class="tag">Investigative reporting</span>
+<dl>
+<dt>Years</dt><dd>1990</dd>
+<dt>What was proven</dt><dd>On 10 October 1990, a 15-year-old identified only as "Nayirah" told the Congressional Human Rights Caucus she had watched Iraqi soldiers take babies out of incubators in a Kuwaiti hospital and leave them to die. The story was repeated by President Bush and senators in the run-up to the Gulf War. She was the daughter of Kuwait's ambassador to the US, and her appearance was arranged by PR firm Hill &amp; Knowlton for Citizens for a Free Kuwait, a group funded by the Kuwaiti government. Investigations after the war found no evidence for the incubator story.</dd>
+<dt>How it came out</dt><dd>John MacArthur's January 1992 <em>New York Times</em> op-ed. Amnesty International, which had initially supported the claim, retracted it.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.nytimes.com/1992/01/06/opinion/remember-nayirah-witness-for-kuwait.html">MacArthur, "Remember Nayirah, Witness for Kuwait?" NYT (1992)</a> · <a href="https://en.wikipedia.org/wiki/Nayirah_testimony">Wikipedia</a></p>
+</div>
+
+<div class="case" id="iraq">
+<h3>Iraq's weapons of mass destruction</h3>
+<span class="tag">Congress</span><span class="tag">Official inquiry</span>
+<dl>
+<dt>Years</dt><dd>2002–2003</dd>
+<dt>What was proven</dt><dd>The Senate Intelligence Committee found in 2004 that most key judgments in the 2002 intelligence estimate on Iraq's weapons were "either overstated, or were not supported by, the underlying intelligence." Its 2008 report found that administration statements linking Iraq to al-Qaeda were not backed by the intelligence. A key source, "Curveball," was a fabricator. A 2002 British memo recorded the head of MI6 saying that in Washington "the intelligence and facts were being fixed around the policy." Britain's Chilcot Inquiry (2016) found the case for war was presented with unjustified certainty.</dd>
+<dt>Still disputed</dt><dd>Whether this was deliberate deception or a collective failure driven by what decision-makers wanted to find. The 2004 Senate report placed most of the blame on the intelligence agencies.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.intelligence.senate.gov/wp-content/uploads/2024/08/sites-default-filesations-108301.pdf">Senate Report 108-301 (2004)</a> · <a href="https://www.intelligence.senate.gov/wp-content/uploads/2024/08/sites-default-filesations-110345.pdf">Senate Report 110-345 (2008)</a> · <a href="https://en.wikipedia.org/wiki/Downing_Street_memo">Wikipedia: Downing Street memo</a></p>
+</div>
+
+<div class="case" id="gleiwitz">
+<h3>The Gleiwitz incident</h3>
+<span class="tag">Court testimony</span>
+<dl>
+<dt>Years</dt><dd>1939</dd>
+<dt>What was proven</dt><dd>On 31 August 1939, SS men posing as Polish insurgents seized a German radio station at Gleiwitz and broadcast an anti-German message, leaving behind a murdered prisoner dressed as a Pole. Hitler cited Polish "attacks" the next day as he invaded Poland. SS officer Alfred Naujocks, who led the raid, described it in a sworn affidavit at Nuremberg.</dd>
+</dl>
+<p class="src">Sources: <a href="https://en.wikipedia.org/wiki/Gleiwitz_incident">Wikipedia</a></p>
+</div>
+
+<div class="case" id="lavon">
+<h3>The Lavon affair</h3>
+<span class="tag">Government admission</span>
+<dl>
+<dt>Years</dt><dd>1954</dd>
+<dt>What was proven</dt><dd>Israeli military intelligence recruited Egyptian Jews to plant bombs in Egyptian, American and British buildings in Cairo and Alexandria, intending the attacks to be blamed on local groups and to persuade Britain to keep its troops in Suez. The cell was caught; two members were executed. Israel denied it for years, and the scandal brought down Defense Minister Pinhas Lavon. Israel publicly honored the surviving operatives in 2005.</dd>
+</dl>
+<p class="src">Sources: <a href="https://en.wikipedia.org/wiki/Lavon_affair">Wikipedia</a></p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="political">5. Political conspiracies</h2>
+
+<div class="case" id="watergate">
+<h3>Watergate</h3>
+<span class="tag">Congress</span><span class="tag">Court</span>
+<dl>
+<dt>Years</dt><dd>1972–1974</dd>
+<dt>What was proven</dt><dd>Operatives tied to President Nixon's re-election committee broke into the Democratic National Committee offices on 17 June 1972. The White House then organized hush money and directed the CIA to obstruct the FBI's investigation. The June 23, 1972 "smoking gun" tape recorded Nixon approving the plan. Sixty-nine people were charged and 48 convicted, including the Attorney General and the President's chief of staff.</dd>
+<dt>How it came out</dt><dd>Reporting by the <em>Washington Post</em> and others, the Senate Watergate Committee (which learned of the White House taping system in July 1973), and the Supreme Court's ruling in <em>United States v. Nixon</em> forcing release of the tapes. Nixon resigned on 9 August 1974.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.senate.gov/about/powers-procedures/investigations/watergate.htm">US Senate, "The Watergate Investigation"</a> · <a href="https://en.wikipedia.org/wiki/Watergate_scandal">Wikipedia</a></p>
+</div>
+
+<div class="case" id="irancontra">
+<h3>Iran-Contra</h3>
+<span class="tag">Congress</span><span class="tag">Court</span>
+<dl>
+<dt>Years</dt><dd>1985–1987</dd>
+<dt>What was proven</dt><dd>National Security Council staff secretly sold missiles to Iran, which was under an arms embargo, partly to win the release of hostages, and sent profits to the Nicaraguan Contras after Congress had cut off that aid under the Boland Amendment. Documents were shredded as the scheme came to light.</dd>
+<dt>How it came out</dt><dd>A Lebanese magazine, <em>Ash-Shiraa</em>, exposed the arms sales in November 1986. Joint congressional hearings ran in 1987. Independent Counsel Lawrence Walsh charged 14 people and won 11 convictions; Oliver North's and John Poindexter's were overturned on appeal because of their immunized congressional testimony, and President George H. W. Bush pardoned six others in 1992.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.fas.org/irp/offdocs/walsh/">Final Report of the Independent Counsel for Iran/Contra Matters (1993)</a> · <a href="https://en.wikipedia.org/wiki/Iran%E2%80%93Contra_affair">Wikipedia</a></p>
+</div>
+
+<div class="case" id="businessplot">
+<h3>The Business Plot</h3>
+<span class="tag">Congress</span>
+<dl>
+<dt>Years</dt><dd>1933–1934</dd>
+<dt>What was proven</dt><dd>Retired Marine Major General Smedley Butler testified that he had been approached to lead a veterans' march on Washington as part of a plan to pressure or sideline President Franklin Roosevelt. The House McCormack–Dickstein Committee reported in 1935 that it had verified the pertinent parts of Butler's account and that such a plan had been discussed and planned.</dd>
+<dt>Still disputed</dt><dd>How serious and how close to action it ever was. Nobody was prosecuted, the businessmen named denied it, and historians disagree on whether it was a real coup attempt or loose talk.</dd>
+</dl>
+<p class="src">Sources: <a href="https://en.wikipedia.org/wiki/Business_Plot">Wikipedia</a></p>
+</div>
+
+<div class="case" id="snowwhite">
+<h3>Operation Snow White</h3>
+<span class="tag">Court</span>
+<dl>
+<dt>Years</dt><dd>1973–1977</dd>
+<dt>What was proven</dt><dd>The Church of Scientology placed agents inside the IRS, the Justice Department and other federal offices to steal files about itself, in one of the largest known infiltrations of the US government. After FBI raids in 1977, 11 people, including founder L. Ron Hubbard's wife Mary Sue Hubbard, were convicted.</dd>
+</dl>
+<p class="src">Sources: <a href="https://en.wikipedia.org/wiki/Operation_Snow_White">Wikipedia</a></p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="corporate">6. Corporate cover-ups</h2>
+
+<div class="case" id="tobacco">
+<h3>Tobacco companies hide what they knew</h3>
+<span class="tag">Court</span><span class="tag">Internal documents</span><span class="tag">Congress</span>
+<dl>
+<dt>Years</dt><dd>1953–1990s</dd>
+<dt>What was proven</dt><dd>After a December 1953 meeting of tobacco executives, the industry launched a joint public-relations campaign to manufacture doubt about the link between smoking and cancer, while its own scientists confirmed the harms and the addictiveness of nicotine. A 1969 Brown &amp; Williamson memo said: "Doubt is our product." In April 1994, seven tobacco CEOs told a House subcommittee under oath that they did not believe nicotine was addictive. In 2006, federal judge Gladys Kessler ruled in <em>United States v. Philip Morris</em> that the companies had violated the federal racketeering law (RICO) by deceiving the public for decades.</dd>
+<dt>How it came out</dt><dd>Leaked documents, whistleblower Jeffrey Wigand, and the 1998 Minnesota trial, which forced the release of tens of millions of pages. The 1998 Master Settlement Agreement followed.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.industrydocuments.ucsf.edu/tobacco/">UCSF Truth Tobacco Industry Documents archive</a></p>
+</div>
+
+<div class="case" id="sugar">
+<h3>The sugar industry steers heart-disease research</h3>
+<span class="tag">Internal documents</span>
+<dl>
+<dt>Years</dt><dd>1965–1967</dd>
+<dt>What was proven</dt><dd>The Sugar Research Foundation paid three Harvard scientists the equivalent of about $50,000 today for a 1967 review in the <em>New England Journal of Medicine</em> that played down sugar's role in heart disease and blamed dietary fat. The funding was not disclosed.</dd>
+<dt>How it came out</dt><dd>Researchers found the industry's correspondence in archives and published it in <em>JAMA Internal Medicine</em> in 2016.</dd>
+</dl>
+<p class="src">Sources: <a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2548255">Kearns, Schmidt &amp; Glantz, JAMA Internal Medicine (2016)</a></p>
+</div>
+
+<div class="case" id="exxon">
+<h3>Exxon's own climate projections</h3>
+<span class="tag">Internal documents</span><span class="tag">Congress</span>
+<dl>
+<dt>Years</dt><dd>1977–2000s</dd>
+<dt>What was proven</dt><dd>Exxon and ExxonMobil scientists produced global warming projections between 1977 and 2003 that a 2023 study in <em>Science</em> found were as accurate as independent academic and government models. In the same period, the company's public communications stressed doubt about climate science. Oil-company CEOs were questioned on this by the House Oversight Committee in 2021.</dd>
+<dt>Still disputed</dt><dd>Legal liability. Lawsuits brought by states and cities are still in the courts, and ExxonMobil disputes that its statements were misleading.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.science.org/doi/10.1126/science.abk0063">Supran, Rahmstorf &amp; Oreskes, "Assessing ExxonMobil's global warming projections," Science (2023)</a> · <a href="https://en.wikipedia.org/wiki/ExxonMobil_climate_change_denial">Wikipedia</a></p>
+</div>
+
+<div class="case" id="purdue">
+<h3>Purdue Pharma and OxyContin</h3>
+<span class="tag">Court</span>
+<dl>
+<dt>Years</dt><dd>1996–2017</dd>
+<dt>What was proven</dt><dd>Purdue pleaded guilty in 2007 to misbranding OxyContin by claiming it was less addictive and less prone to abuse than other opioids. In 2020 it pleaded guilty again, to three federal felonies: conspiracy to defraud the United States and two conspiracies to violate federal anti-kickback law, including paying doctors to prescribe more.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.justice.gov/opa/pr/opioid-manufacturer-purdue-pharma-pleads-guilty-fraud-and-kickback-conspiracies">US Department of Justice (2020)</a> · <a href="https://en.wikipedia.org/wiki/Purdue_Pharma">Wikipedia</a></p>
+</div>
+
+<div class="case" id="vw">
+<h3>Volkswagen "Dieselgate"</h3>
+<span class="tag">Court</span>
+<dl>
+<dt>Years</dt><dd>2006–2015</dd>
+<dt>What was proven</dt><dd>Volkswagen installed software in about 11 million diesel cars worldwide that detected emissions tests and switched on full pollution controls only while being tested. On the road, the cars emitted up to 40 times the legal limit of nitrogen oxides. VW pleaded guilty in the US in 2017 and agreed to pay $4.3 billion in criminal and civil penalties; executives were charged in the US and Germany.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.justice.gov/opa/pr/volkswagen-ag-agrees-plead-guilty-and-pay-43-billion-criminal-and-civil-penalties-six">US Department of Justice (2017)</a> · <a href="https://en.wikipedia.org/wiki/Diesel_emissions_scandal">Wikipedia</a></p>
+</div>
+
+<div class="case" id="dupont">
+<h3>DuPont and PFOA ("C8")</h3>
+<span class="tag">Regulator</span><span class="tag">Court</span>
+<dl>
+<dt>Years</dt><dd>1950s–2000s</dd>
+<dt>What was proven</dt><dd>DuPont's internal studies showed health risks from PFOA, a chemical used to make Teflon, and the company knew it had contaminated drinking water near its Parkersburg, West Virginia plant. In 2005 it paid the EPA $16.5 million, then the largest civil administrative penalty under the Toxic Substances Control Act, for failing to report what it knew. A court-ordered science panel later found probable links to six diseases, including kidney and testicular cancer.</dd>
+</dl>
+<p class="src">Sources: <a href="https://en.wikipedia.org/wiki/Perfluorooctanoic_acid">Wikipedia: PFOA</a></p>
+</div>
+
+<div class="case" id="phoebus">
+<h3>The Phoebus cartel: lightbulbs built to fail</h3>
+<span class="tag">Internal documents</span><span class="tag">Court</span>
+<dl>
+<dt>Years</dt><dd>1924–1939</dd>
+<dt>What was proven</dt><dd>The world's largest lightbulb makers, including Osram, Philips and companies linked to General Electric, agreed to limit bulb life to 1,000 hours, down from 1,500–2,000, and fined members whose bulbs lasted too long. A US court found GE in violation of antitrust law in 1949 in a case that covered the cartel.</dd>
+<dt>How it came out</dt><dd>Historian Markus Krajewski reconstructed the cartel from its own records.</dd>
+</dl>
+<p class="src">Sources: <a href="https://spectrum.ieee.org/the-great-lightbulb-conspiracy">Krajewski, "The Great Lightbulb Conspiracy," IEEE Spectrum (2014)</a> · <a href="https://en.wikipedia.org/wiki/Phoebus_cartel">Wikipedia</a></p>
+</div>
+
+<div class="case" id="libor">
+<h3>LIBOR rigging</h3>
+<span class="tag">Court</span><span class="tag">Regulator</span>
+<dl>
+<dt>Years</dt><dd>2003–2010</dd>
+<dt>What was proven</dt><dd>Traders and submitters at major banks coordinated to manipulate LIBOR, the interest rate benchmark behind hundreds of trillions of dollars in contracts. Barclays, UBS, RBS, Deutsche Bank and others admitted wrongdoing and paid billions in fines in the US and UK starting in 2012.</dd>
+<dt>Still disputed</dt><dd>Some individual convictions. The UK Supreme Court quashed the convictions of former trader Tom Hayes and Carlo Palombo in July 2025, finding the juries had been misdirected.</dd>
+</dl>
+<p class="src">Sources: <a href="https://en.wikipedia.org/wiki/Libor_scandal">Wikipedia</a> · <a href="https://en.wikipedia.org/wiki/Tom_Hayes_(trader)">Wikipedia: Tom Hayes</a></p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="intl">7. Outside the United States</h2>
+
+<div class="case" id="gladio">
+<h3>Operation Gladio and NATO stay-behind networks</h3>
+<span class="tag">Parliament</span>
+<dl>
+<dt>Years</dt><dd>1950s–1990</dd>
+<dt>What was proven</dt><dd>Italian Prime Minister Giulio Andreotti confirmed to parliament in 1990 that a secret armed "stay-behind" network, Gladio, had existed since the 1950s with NATO and CIA involvement, to resist a Soviet invasion. Similar networks were confirmed in Belgium, Switzerland and other countries, and the European Parliament condemned them in a November 1990 resolution.</dd>
+<dt>Still disputed</dt><dd>Whether the networks or people in them took part in Italy's right-wing terrorist bombings of the 1970s and 1980s. Italian investigations found links between some neo-fascist attackers and parts of the state's security services, but no inquiry has shown that Gladio as an organization directed attacks.</dd>
+</dl>
+<p class="src">Sources: <a href="https://en.wikipedia.org/wiki/Operation_Gladio">Wikipedia</a></p>
+</div>
+
+<div class="case" id="hillsborough">
+<h3>Hillsborough (United Kingdom)</h3>
+<span class="tag">Official inquiry</span><span class="tag">Court</span>
+<dl>
+<dt>Years</dt><dd>1989–2016</dd>
+<dt>What was proven</dt><dd>After 97 Liverpool fans died in a crush at Hillsborough stadium in 1989, South Yorkshire Police blamed drunk and ticketless fans. The Hillsborough Independent Panel found in 2012 that police had altered 164 witness statements, 116 of them to remove or change comments unfavorable to the police. Inquests in 2016 ruled the fans were unlawfully killed and that their behavior did not contribute.</dd>
+</dl>
+<p class="src">Sources: <a href="https://en.wikipedia.org/wiki/Hillsborough_Independent_Panel">Wikipedia: Hillsborough Independent Panel</a></p>
+</div>
+
+<div class="case" id="infectedblood">
+<h3>Infected blood (United Kingdom)</h3>
+<span class="tag">Official inquiry</span>
+<dl>
+<dt>Years</dt><dd>1970s–1990s</dd>
+<dt>What was proven</dt><dd>More than 30,000 people were infected with HIV or hepatitis C through NHS blood and blood products, many imported from paid donors in the US. The Infected Blood Inquiry's 2024 final report found the disaster could largely have been avoided, that officials knew of the risks, and that there had been a "subtle, pervasive and chilling" cover-up, including the deliberate destruction of documents.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.infectedbloodinquiry.org.uk/reports/inquiry-report">Infected Blood Inquiry report (2024)</a> · <a href="https://en.wikipedia.org/wiki/Infected_blood_scandal_in_the_United_Kingdom">Wikipedia</a></p>
+</div>
+
+<div class="case" id="postoffice">
+<h3>The Post Office Horizon scandal (United Kingdom)</h3>
+<span class="tag">Official inquiry</span><span class="tag">Court</span>
+<dl>
+<dt>Years</dt><dd>1999–2015</dd>
+<dt>What was proven</dt><dd>The Post Office prosecuted more than 900 branch operators for theft and false accounting based on its Horizon computer system, while insisting the system was reliable. The High Court found in 2019 that Horizon had bugs that could cause the shortfalls and that the Post Office and Fujitsu had known about them. Parliament passed a law in 2024 to quash the convictions in bulk.</dd>
+</dl>
+<p class="src">Sources: <a href="https://www.postofficehorizoninquiry.org.uk/">Post Office Horizon IT Inquiry</a> · <a href="https://en.wikipedia.org/wiki/British_Post_Office_scandal">Wikipedia</a></p>
+</div>
+
+<div class="case" id="robodebt">
+<h3>Robodebt (Australia)</h3>
+<span class="tag">Royal commission</span>
+<dl>
+<dt>Years</dt><dd>2016–2019</dd>
+<dt>What was proven</dt><dd>The Australian government used an automated scheme to issue welfare debts that were often wrong and that its own lawyers had warned were unlawful. A 2023 Royal Commission called it "a crude and cruel mechanism, neither fair nor legal," and found that legal advice had been withheld. A Federal Court settlement in 2020 had already required repayments to hundreds of thousands of people.</dd>
+</dl>
+<p class="src">Sources: <a href="https://en.wikipedia.org/wiki/Robodebt_scheme">Wikipedia</a></p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="unproven">8. Famous theories that were not proven</h2>
+<p>These come up alongside the cases above, but the evidence has not met the same bar. Some have a documented core with an unproven larger claim on top.</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>Theory</th><th>What official bodies found</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>JFK was killed by a conspiracy</td><td>The House Select Committee on Assassinations (1979) said Kennedy was "probably assassinated as a result of a conspiracy," based mainly on acoustic analysis of a police recording. A 1982 National Academy of Sciences panel found that recording did not capture the shots. Records released from 2017 through 2025 showed CIA secrecy around Oswald but no proof of a second gunman or a plot.</td><td>Not proven</td></tr>
+<tr><td>The US government recovered alien craft</td><td>Former intelligence officer David Grusch testified to Congress in 2023 that it had, based on what others told him. The Pentagon's AARO reported in 2024 that it found no evidence of extraterrestrial technology or a hidden recovery program.</td><td>Not proven</td></tr>
+<tr><td>COVID-19 came from a lab</td><td>US agencies are split. The FBI and Energy Department favored a lab-related origin, and the CIA moved to that view with low confidence in 2025; other agencies leaned toward natural spillover. No inquiry has produced conclusive evidence either way.</td><td>Open question</td></tr>
+<tr><td>9/11 was planned by the US government</td><td>The 9/11 Commission and NIST investigations found no evidence for it. Separately, the declassified "28 pages" (2016) and later FBI documents describe contacts between some hijackers and Saudi officials; those contacts are documented, but Saudi government direction of the attack was not established.</td><td>Not proven</td></tr>
+<tr><td>"Chemtrails" are secret spraying programs</td><td>Real open-air tests did happen (see <a href="#seaspray">Sea-Spray</a> and <a href="#popeye">Popeye</a>), but they were time-limited and later disclosed. No evidence supports an ongoing program behind ordinary aircraft contrails.</td><td>Not proven</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="patterns">9. What the proven cases have in common</h2>
+<ul>
+<li><strong>They leaked.</strong> Almost every case came out through a whistleblower, a burglary, a FOIA request, a misfiled archive, a lawsuit's discovery or a reporter. Few were volunteered.</li>
+<li><strong>It took years.</strong> The gap between the act and the official confirmation is usually 5 to 30 years, and up to 60 for the Iran coup.</li>
+<li><strong>Records were destroyed when possible.</strong> MKUltra files, CIA interrogation tapes and Iran-Contra documents were all deliberately destroyed, and the Infected Blood Inquiry found the same.</li>
+<li><strong>The proven version often differs from the rumor.</strong> Sometimes it is narrower (the Contra-drug link, Gladio), sometimes broader than people suspected (NSA collection, tobacco).</li>
+<li><strong>Oversight bodies did the confirming.</strong> Congressional committees, inspectors general, courts and public inquiries turned allegations into record. That is also why the theories in section 8 are listed separately: the same institutions looked and did not confirm them.</li>
+</ul>
+<blockquote><p>A useful test for any new claim: is there a document, a sworn record or a finding by a body that had the power to look? Every case on this page passed that test. A theory that cannot point to one is not yet in the same category.</p></blockquote>
+
+</main>
+</body>
+</html>
